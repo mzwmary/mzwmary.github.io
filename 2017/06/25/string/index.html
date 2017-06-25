@@ -5,13 +5,16 @@
   
   <title>string | 前端-花开两岸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="#String()字符串方法 ##1、charAt()  作用：根据下标找对应的字符 语法：string.charAt(n); 参数：n (可不写,默认为0) 返回值：字符串string的第n个字符。 若n不在0~string.length-1范围内，返回  “”    1举例： ##2、charCodeAt()  作用：根据下标找对应的字符 语法：string.charCodeAt(n); 参数">
+<meta property="og:type" content="article">
 <meta property="og:title" content="string">
 <meta property="og:url" content="https://mzwmary.github.io/2017/06/25/string/index.html">
 <meta property="og:site_name" content="前端-花开两岸">
-<meta property="og:updated_time" content="2017-06-25T12:58:49.052Z">
+<meta property="og:description" content="#String()字符串方法 ##1、charAt()  作用：根据下标找对应的字符 语法：string.charAt(n); 参数：n (可不写,默认为0) 返回值：字符串string的第n个字符。 若n不在0~string.length-1范围内，返回  “”    1举例： ##2、charCodeAt()  作用：根据下标找对应的字符 语法：string.charCodeAt(n); 参数">
+<meta property="og:updated_time" content="2017-06-25T14:04:39.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="string">
+<meta name="twitter:description" content="#String()字符串方法 ##1、charAt()  作用：根据下标找对应的字符 语法：string.charAt(n); 参数：n (可不写,默认为0) 返回值：字符串string的第n个字符。 若n不在0~string.length-1范围内，返回  “”    1举例： ##2、charCodeAt()  作用：根据下标找对应的字符 语法：string.charCodeAt(n); 参数">
   
     <link rel="alternate" href="/atom.xml" title="前端-花开两岸" type="application/atom+xml">
   
@@ -49,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://mzwmary.github.io"></form>
@@ -63,7 +66,7 @@
         <section id="main"><article id="post-string" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/25/string/" class="article-date">
-  <time datetime="2017-06-25T12:58:49.000Z" itemprop="datePublished">2017-06-25</time>
+  <time datetime="2017-06-25T14:04:08.000Z" itemprop="datePublished">2017-06-25</time>
 </a>
     
   </div>
@@ -82,36 +85,149 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#String()字符串方法</p>
+<p>##1、charAt()</p>
+<ul>
+<li>作用：根据下标找对应的字符</li>
+<li>语法：string.charAt(n);</li>
+<li>参数：n (可不写,默认为0)</li>
+<li>返回值：字符串string的第n个字符。<ul>
+<li>若n不在0~string.length-1范围内，返回  “”</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+<p>##2、charCodeAt()</p>
+<ul>
+<li>作用：根据下标找对应的字符</li>
+<li>语法：string.charCodeAt(n);</li>
+<li>参数：n  (可不写,默认为0)</li>
+<li>返回值：返回字符串中第ｎ个字符串在Unicode中的编码<ul>
+<li>若n不在0~string.length-1范围内，返回NaN。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>##3、fromCharCode()</p>
+<ul>
+<li>作用：根据字符编码找对应字符</li>
+<li>语法：string.fromCharCode(n1,n2…)</li>
+<li>参数：n1、n2…（字符编码）</li>
+<li>返回值：含有指定编码的字符的新字符串</li>
+<li>注意点：fromcharCode()是构造函数 String()的属性，而不是字符串或String对象的方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var s = String.fromCharCode(104, 101, 108, 108, 111);</div><div class="line">console.log(s);//hello</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##4、indexOf()</p>
+<ul>
+<li>作用：根据字符找下标</li>
+<li>语法：string.indexOf(str，n)</li>
+<li>参数：str - 要在字符串string中检索的子串<ul>
+<li>n - 开始检索的位置<ul>
+<li>可不写，默认为0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
+<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>##5、lastIndexOf()</p>
+<ul>
+<li>作用：根据字符找下标，从后往前找</li>
+<li>语法：string.lastIndexOf(str，n)</li>
+<li>参数：str - 要在字符串string中检索的子串<ul>
+<li>n - 开始检索的位置<ul>
+<li>可不写，默认为0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
+<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>##6、toUpperCase()</p>
+<ul>
+<li>作用:将小写字母转成大写</li>
+<li>语法：string.toUpperCase()</li>
+<li>参数：无参数</li>
+<li>返回值：将所有小写字符都被转换成了大写字符 后的string</li>
+<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = hello;</div><div class="line">var str1 = str.toUpperCase();</div><div class="line">console.log(str);</div><div class="line">console.log(str1);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##7、toLowerCase()</p>
+<ul>
+<li>作用:将大写字母转成小写</li>
+<li>语法：string.toLowerCase()</li>
+<li>参数：无参数</li>
+<li>返回值：将所有大写字符都被转换成了小写字符 后的string</li>
+<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##8、slice()</p>
+<ul>
+<li>作用:用于截取字符串，返回新的截取后的字符串</li>
+<li>语法：string.slice(start,end)</li>
+<li>参数：start - 开始截取的下标<ul>
+<li>end - 结束截取的下标(不包含结束位置)</li>
+<li>如果是负数，从尾部位置开始算起</li>
+</ul>
+</li>
+<li>返回值：截取后新的字符串</li>
+<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##9、substring()</p>
+<ul>
+<li>作用:用于截取字符串，返回新的截取后的字符串</li>
+<li>语法：string.subString(from,to)</li>
+<li>参数：from - 开始截取的位置<ul>
+<li>to - 结束截取的位置（不包含结束的位置）<ul>
+<li>to 可省略，默认到字符串结尾位置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>返回值：截取的新的字符串<ul>
+<li>若from = to 返回 “”</li>
+<li>若from &gt; to 先交换参数位置，但包含的还是from, 不包含to</li>
+</ul>
+</li>
+<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##10、split()</p>
+<ul>
+<li>作用:将字符串用分隔符转成数组</li>
+<li>语法：string.split(a,limit)</li>
+<li>参数：a - 字符串或正则表达式,从该参数指定的地方分割string<ul>
+<li>limit - 指定了返回的数组的最大长度(可不写)</li>
+</ul>
+</li>
+<li>返回值：一个字符串数组<ul>
+<li>若 a 在 string 开头位置，返回的数组的第一个元素是空字符串</li>
+<li>若 a 在 string 结尾位置，返回的数组的最后一个元素是空字符串</li>
+</ul>
+</li>
+<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mzwmary.github.io/2017/06/25/string/" data-id="cj4cs0ysb0001ucvs4hadyfzl" class="article-share-link">Share</a>
+      <a data-url="https://mzwmary.github.io/2017/06/25/string/" data-id="cj4cse10l0000k0vs27zpxn87" class="article-share-link">Partager</a>
       
       
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2017/06/25/index/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          index
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/06/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -139,20 +255,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2017/06/25/index/">index</a>
-          </li>
-        
-          <li>
             <a href="/2017/06/25/string/">string</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/25/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -168,7 +276,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Mary<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
