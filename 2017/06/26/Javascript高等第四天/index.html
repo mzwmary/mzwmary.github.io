@@ -1,0 +1,705 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="#Javascript高等第四天 ##1、arguments对象  arguments对象就是一个伪数组，他是函数中的一个变量 当函数被调用的时候，传入函数的所有的实参，都会被存入arguments这个伪数组中 一般在用户传入的参数个数不确定的情况下，就使用arguments来获取用户传入的参数，而不通过形参来获取。###1-1、arguments对象 and 函数名.arguments 函数名.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端-花开两岸">
+<meta property="og:url" content="https://mzwmary.github.io/2017/06/26/Javascript高等第四天/index.html">
+<meta property="og:site_name" content="前端-花开两岸">
+<meta property="og:description" content="#Javascript高等第四天 ##1、arguments对象  arguments对象就是一个伪数组，他是函数中的一个变量 当函数被调用的时候，传入函数的所有的实参，都会被存入arguments这个伪数组中 一般在用户传入的参数个数不确定的情况下，就使用arguments来获取用户传入的参数，而不通过形参来获取。###1-1、arguments对象 and 函数名.arguments 函数名.">
+<meta property="og:updated_time" content="2017-06-19T12:16:49.481Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端-花开两岸">
+<meta name="twitter:description" content="#Javascript高等第四天 ##1、arguments对象  arguments对象就是一个伪数组，他是函数中的一个变量 当函数被调用的时候，传入函数的所有的实参，都会被存入arguments这个伪数组中 一般在用户传入的参数个数不确定的情况下，就使用arguments来获取用户传入的参数，而不通过形参来获取。###1-1、arguments对象 and 函数名.arguments 函数名.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mzwmary.github.io/2017/06/26/Javascript高等第四天/"/>
+
+
+
+
+
+  <title> | 前端-花开两岸</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端-花开两岸</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/06/26/Javascript高等第四天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-26T09:52:53+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Javascript高等第四天</p>
+<p>##1、arguments对象</p>
+<ul>
+<li>arguments对象就是一个伪数组，他是函数中的一个变量</li>
+<li>当函数被调用的时候，传入函数的所有的实参，都会被存入arguments这个伪数组中</li>
+<li>一般在用户传入的参数个数不确定的情况下，就使用arguments来获取用户传入的参数，而不通过形参来获取。<br>###1-1、arguments对象 and 函数名.arguments</li>
+<li>函数名.arguments中的arguments是函数的属性，作用与arguments对象一样，大多直接使用arguments对象，你懂得！<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">	console.log(arguments === test.arguments);</div><div class="line">&#125;;</div><div class="line">test(1,2,3);//false 伪数组，地址不同</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###1-2、arguments对象的属性</p>
+<p>####1-2-1、callee<br>指的就是arguments对象所在的函数！<strong>一般用在函数中实现递归</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">	console.log(arguments.callee);</div><div class="line">&#125;;</div><div class="line">test();//function test()&#123;console.log(arguments.callee);&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>实现递归<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">	arguments.callee;</div><div class="line">&#125;;</div><div class="line">test();//死循环</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>####1-2-2、length<br>用户在调用函数的时候，传入的实参的个数！<br>注意：函数的属性length，指函数形参的个数。</p>
+<p>#####1-2-2-1、 控制用户输入的参数与形参的个数一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function fn(a,b)&#123;</div><div class="line">	if(arguments.length ！= fn.length)&#123;</div><div class="line">		console.log(&quot;输入不正确！请重新输入！&quot;);</div><div class="line">		return;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>#####1-2-2-2、实现重载</p>
+<ul>
+<li>重载的概念：相同的函数名，不同参数，可以共存，实现不同的功能</li>
+<li><strong>JS中没有重载</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">	switch(arguments.length)&#123;</div><div class="line">		case 1: </div><div class="line">			break;</div><div class="line">		case 2: </div><div class="line">			break;</div><div class="line">		case 3: </div><div class="line">			break;</div><div class="line">		case 4: </div><div class="line">			break;</div><div class="line">		case 5: </div><div class="line">			break;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##2、递归</p>
+<ol>
+<li>什么是递归：在函数中直接或者间接的调用自己。</li>
+<li>递归有两大要素：<ul>
+<li>自己调用自己</li>
+<li>必须有结束条件</li>
+</ul>
+</li>
+<li>化归思想：将一个问题由难化易，由繁化简，由复杂化简单的过程称为化归，它是转化和归结的简称。<br>###2-1、递归解决数学问题<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function power(n, m)&#123;</div><div class="line">	if(m == 1)&#123;</div><div class="line">		return n;</div><div class="line">	&#125;</div><div class="line">	return power(n, m - 1) * n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>斐波那契数列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function fib(n)&#123;</div><div class="line">	if(n == 1 || n == 2)&#123;</div><div class="line">		return 1;</div><div class="line">	&#125;</div><div class="line">	return fib(n - 1) + fib(n - 2);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###2-2、递归获取所有元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function getChildren(ele)&#123;</div><div class="line">	var list = [];</div><div class="line">	var children = ele.children;</div><div class="line">	for(var i = 0; i &lt; children.length; i ++)&#123;</div><div class="line">		var child = children[i];</div><div class="line">		list.push(child);</div><div class="line">		var temp = getChildren(child);</div><div class="line">		list = list.concat(temp);</div><div class="line">	&#125;</div><div class="line">	return list;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>自己创建getElementById方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getElementById(id)&#123;</div><div class="line">	var allEles = getChildren(document.body);</div><div class="line"></div><div class="line">	for(var i = 0; i &lt; allEles.length; i++)&#123;</div><div class="line">		if(allEles[i].id == id)&#123;</div><div class="line">			return allEles[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return null;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>自己创建getElementsByClassName方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getElementsByClassName(className)&#123;</div><div class="line">	var allEles = getChildren(document.body);</div><div class="line">	var arr = [];</div><div class="line">	for(var i = 0; i &lt; allEles.length; i++)&#123;</div><div class="line">		if(allEles[i].className.indexOf(className) != -1)&#123;</div><div class="line">			arr.push(allEles[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	if(arr.length == 0)&#123;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line">	return arr;	</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##3、作用域</p>
+<blockquote>
+<p>在JS当中有且只有函数可以创建作用域！</p>
+<p>###3-1、全局作用域与局部作用域</p>
+<ol>
+<li>全局作用域：直接写在script标签中的内容，就属于全局作用域的范围。</li>
+<li>局部作用局：写在函数中的内容，属于局部作用域的范围。<br>###3-2、块级作用域<br>块级作用域: （JS中没有块级作用域）通过代码块限定的作用域，就是块级作用域。<br>###3-3、词法作用域与静态作用域</li>
+<li>词法作用域（静态作用域）： 函数中变量的访问，只和函数声明的位置有关系，也就是和代码的声明书写结构有关系，和函数的具体调用，运行时的状态没有关系，这种作用域就是词法作用域。 <strong>js中的作用域就属于词法作用域。</strong></li>
+<li>静态作用域：和词法作用域相对的作用域叫做动态作用域。<br>###3-4、作用域链<br>函数可以创建作用域, 函数中可以声明函数，这样就行成了作用域前套作用域的一个链式的访问结构，称作作用域链！<br>###3-5、变量的访问规则（搜索原则）</li>
+<li>现在使用变量的作用域中进行查找，如果找到了该变量的声明，就直接使用该变量。</li>
+<li>如果没有找到，就去上一级作用域中进行查找,如果找到了该变量的声明，就直接使用该变量。</li>
+<li>如果没有找到，就继续沿着作用域链向外查找，直到找到全局作用域为止。<br>##4、变量提升<br>###4-1、js代码执行阶段</li>
+<li>预解析阶段</li>
+<li>执行阶段<br>###4-2、变量提升时各种情况<br>在js代码的预解析阶段，系统会将所有的变量的声明以及函数的声明提升，提升到其所在的作用域的最顶上<br>####4-2-1、函数同名时<br>当在变量提升的时候，遇到函数同名的情况的时候，所有的函数都会被提升，但是后面的会把前面的给覆盖掉！<br>####4-2-2、函数和变量同名时<br>当函数和变量同名的时候，只提升函数，忽略掉变量声明<br>####4-2-3、变量提升是分作用域的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">b();//访问不到，b只会随a被提到最顶端</div><div class="line">function a()&#123;</div><div class="line">	function b()&#123;</div><div class="line">		console.log(&quot;1&quot;);</div><div class="line"> 	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>####4-2-4、变量提升是分段（script标签）的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	console.log(a);	//a is not defined</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	function a()&#123;</div><div class="line">	&#125;;		</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">	function a()&#123;</div><div class="line">	&#125;;		</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	console.log(a);	//function a()&#123;&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>####4-2-5、条件式函数声明<br>定义：在条件语句中声明的函数，就是条件式函数声明</p>
+<ul>
+<li>条件式函数声明在提升的时候，会被当做函数表达式来处理</li>
+<li>提升后的效果就是，只有函数名被提升了，函数体没有被提升<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a();//a is not a function</div><div class="line">console.log(a);//undefined</div><div class="line">if(false)&#123;</div><div class="line"> 	function a()&#123;</div><div class="line"> 		console.log(&quot;我是一个条件式函数声明&quot;);</div><div class="line"> 	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a();//a is not a function</div><div class="line">console.log(a);//undefined</div><div class="line">if(true)&#123;</div><div class="line"> 	function a()&#123;</div><div class="line"> 		console.log(&quot;我是一个条件式函数声明&quot;);</div><div class="line"> 	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####4-2-6、函数形参在变量提升过程当中的处理<br>在进行变量提升之前，形参的声明以及赋值其实已经完成，所以形参的声明和赋值不参与变量提升<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">(function(a)&#123;</div><div class="line">	console.log(typeof a);</div><div class="line">	var a = &quot;123&quot;;</div><div class="line">	function a()&#123;&#125;;</div><div class="line">&#125;)(100);</div><div class="line">//提升后的代码</div><div class="line">(function(a)&#123;</div><div class="line">	var a = 100;</div><div class="line">	function a()&#123;&#125;;</div><div class="line">	console.log(typeof a);</div><div class="line">	a = &quot;123&quot;;</div><div class="line">&#125;)(100)</div></pre></td></tr></table></figure></p>
+<p>##拓展：变态面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Foo() &#123;</div><div class="line">	getName = function()&#123; alert(1); &#125;;</div><div class="line">	return this;</div><div class="line">&#125;</div><div class="line">Foo.getName = function() &#123; alert(2); &#125;;</div><div class="line">Foo.prototype.getName = function()&#123; alert(3); &#125;;</div><div class="line">var getName = function() &#123; alert(4); &#125;;</div><div class="line">function getName()&#123; alert(5); &#125;</div><div class="line"></div><div class="line">Foo.getName(); //2</div><div class="line">getName(); //4</div><div class="line">Foo().getName(); //1 </div><div class="line">getName(); //1</div><div class="line"></div><div class="line">new Foo.getName(); //2</div><div class="line">new Foo().getName(); //3</div><div class="line">new new Foo().getName(); //3</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/26/http服务&ajax编程/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/26/JavaScript高级 第5天/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Mary" />
+          <p class="site-author-name" itemprop="name">Mary</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mary</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript高级 第6天1. 立即执行函数表达式(IIFE    Immediately Invoked Function Expression)将函数表达式直接加上()进行调用。  tip: 只要函数能被当做表达式，就可以直接加()调用  写法：  (function(){})() (funciton(){}()) +function(){}() -function(){}() ! fu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端-花开两岸">
+<meta property="og:url" content="https://mzwmary.github.io/2017/06/26/JavaScript高级 第6天/index.html">
+<meta property="og:site_name" content="前端-花开两岸">
+<meta property="og:description" content="JavaScript高级 第6天1. 立即执行函数表达式(IIFE    Immediately Invoked Function Expression)将函数表达式直接加上()进行调用。  tip: 只要函数能被当做表达式，就可以直接加()调用  写法：  (function(){})() (funciton(){}()) +function(){}() -function(){}() ! fu">
+<meta property="og:updated_time" content="2017-06-19T12:16:59.609Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端-花开两岸">
+<meta name="twitter:description" content="JavaScript高级 第6天1. 立即执行函数表达式(IIFE    Immediately Invoked Function Expression)将函数表达式直接加上()进行调用。  tip: 只要函数能被当做表达式，就可以直接加()调用  写法：  (function(){})() (funciton(){}()) +function(){}() -function(){}() ! fu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mzwmary.github.io/2017/06/26/JavaScript高级 第6天/"/>
+
+
+
+
+
+  <title> | 前端-花开两岸</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">前端-花开两岸</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/06/26/JavaScript高级 第6天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-26T09:52:53+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript高级-第6天"><a href="#JavaScript高级-第6天" class="headerlink" title="JavaScript高级 第6天"></a>JavaScript高级 第6天</h1><h2 id="1-立即执行函数表达式"><a href="#1-立即执行函数表达式" class="headerlink" title="1. 立即执行函数表达式"></a>1. 立即执行函数表达式</h2><p>(<strong>IIFE</strong>    Immediately Invoked Function Expression)<br>将函数表达式直接加上()进行调用。</p>
+<blockquote>
+<p>tip: 只要函数能被当做表达式，就可以直接加()调用</p>
+</blockquote>
+<p>写法：</p>
+<ul>
+<li>(function(){})()</li>
+<li>(funciton(){}())</li>
+<li>+function(){}()</li>
+<li>-function(){}()</li>
+<li>! function(){}()</li>
+<li>~ function(){}()</li>
+<li>^ function(){}()</li>
+</ul>
+<p>##2. 沙箱模式<br>一个隔离的环境<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window</span>)</span>&#123;</div><div class="line">	<span class="comment">//变量的声明</span></div><div class="line"></div><div class="line">	<span class="comment">//功能代码</span></div><div class="line"></div><div class="line">	<span class="comment">//如果需要，就通过window对象向外界暴露接口</span></div><div class="line">	<span class="comment">//window.jQuery = window.$ = jQuery</span></div><div class="line">&#125;)(<span class="built_in">window</span>)</div></pre></td></tr></table></figure></p>
+<h3 id="传参的目的"><a href="#传参的目的" class="headerlink" title="传参的目的"></a>传参的目的</h3><ol>
+<li>为了实现逻辑上的隔离，沙箱内部不使用外部的内容，外部也不使用沙箱内部的内容</li>
+<li>便于代码压缩，因为内置对象无法被压缩，如果使用传参的方式，便可以压缩掉自己定义的这个形参</li>
+</ol>
+<h3 id="沙箱模式的用途"><a href="#沙箱模式的用途" class="headerlink" title="沙箱模式的用途"></a>沙箱模式的用途</h3><ol>
+<li>框架</li>
+<li>类库</li>
+<li>插件</li>
+<li>组件</li>
+</ol>
+<h2 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h2><p>###1. forEach</p>
+<blockquote>
+<ul>
+<li>作用：遍历数组</li>
+<li>语法：<code>arr.forEach(function(value,index,arr){ });</code></li>
+<li>参数：</li>
+<li>value： 当前正在遍历的元素。</li>
+<li>index： 当前正在遍历的元素的索引。</li>
+<li><p>arr： 当前正在遍历的数组对象。</p>
+</li>
+<li><p>返回值：undefined</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>forEach实现原理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Array.prototype.myForEach = function(callback)&#123;</div><div class="line">	for(var i = 0;i&lt;this.length;i++)&#123;</div><div class="line">		callback(this[i],i,this);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###2. map</p>
+<blockquote>
+<ul>
+<li>作用：遍历数组</li>
+<li>语法：<code>arr.map(function(value,index,arr){ });</code></li>
+<li>参数：</li>
+<li>value： 当前正在遍历的元素。</li>
+<li>index： 当前正在遍历的元素的索引。</li>
+<li><p>arr： 当前正在遍历的数组对象。</p>
+</li>
+<li><p>返回值：遍历数组时，循环调用回调函数，并每次将回调函数的返回值添加到数组中，最后返回数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">var a = arr.map(function(value,index,arr)&#123;</div><div class="line">&#125;);</div><div class="line">console.log(a);//[undefined, undefined, undefined, undefined, undefined]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">var a = arr.map(function(value,index,arr)&#123;</div><div class="line">	return index*2;</div><div class="line">&#125;);</div><div class="line">console.log(a);//[0,2,4,6,8]</div></pre></td></tr></table></figure>
+<p><strong>map实现原理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Array.prototype.myMap = function(callback)&#123;</div><div class="line">	var result = [];</div><div class="line">	for(var i = 0;i&lt;this.length;i++)&#123;</div><div class="line">		var temp = callback(this[i],i,this);</div><div class="line">		result.push(temp);</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>###3. filter</p>
+<blockquote>
+<ul>
+<li>作用：遍历数组</li>
+<li>语法：<code>arr.filter(function(value,index,arr){ });</code></li>
+<li>参数：</li>
+<li>value： 当前正在遍历的元素。</li>
+<li>index： 当前正在遍历的元素的索引。</li>
+<li>arr： 当前正在遍历的数组对象。</li>
+<li>返回值：遍历数组时，每次调用回调函数，若回调函数的返回值是true,就将当前元素加入到返回值数组中。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">var a = arr.filter(function(value,index,arr)&#123;</div><div class="line">	</div><div class="line">&#125;);</div><div class="line">console.log(a);//[ ]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><strong>filter实现原理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Array.prototype.myFilter = function(callback)&#123;</div><div class="line">	var result = [];</div><div class="line">	for(var i = 0;i&lt;this.length;i++)&#123;</div><div class="line">		if(callback(this[i],i,arr))&#123;</div><div class="line">			result.push(temp);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="函数的四种调用模式"><a href="#函数的四种调用模式" class="headerlink" title="函数的四种调用模式"></a>函数的四种调用模式</h2><ol>
+<li><p>函数调用模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">函数名();</div><div class="line"><span class="comment">//this ---&gt; window</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>方法调用模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象名.方法名();</div><div class="line">对象名[方法名]();</div><div class="line"><span class="comment">//this ---&gt; 调用该方法的对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数调用模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> 函数名();</div><div class="line"><span class="comment">//this ---&gt; new创建出来的对象</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>上下文调用模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">函数名.call();</div><div class="line">函数名.apply();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="上下文调用模式"><a href="#上下文调用模式" class="headerlink" title="上下文调用模式"></a>上下文调用模式</h2><p><strong>上下文调用模式中可以改变函数中this的指向！</strong></p>
+<ul>
+<li>lvalue:  左值，能够在等号左边接受别人赋值的值就可以称为左值。</li>
+<li>rvalue:  右值，能够在等号右边给别人赋值的值就可以称为右值。</li>
+<li>this是一个纯右值，只能用来给别人赋值，或者获取内容使用，不能被赋值！<blockquote>
+<p>注意事项：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>当给call和apply方法的第一个参数传递的是一个值类型的数据的时候，系统会自动将其抓换成对应的引用类型的数据，然后将this指向这个引用类型的数据。</li>
+<li>如果给call和apply方法传递的第一个参数是null或者undefined，或者，一个参数都不传，函数中this会指向window对象！<h3 id="call"><a href="#call" class="headerlink" title="call"></a>call</h3><blockquote>
+<p>语法：函数名.call(obj, arg1…argN);<br>步骤：</p>
+</blockquote>
+</li>
+<li>调用该函数</li>
+<li>将函数中的this指向obj</li>
+<li>将call方法的第二个及以后所有的实参，依次传递给函数作为实参<br>####实现遍历<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var each = function(array,fn)&#123;</div><div class="line">	for(var index = 0;index&lt;array.length;index++)&#123;</div><div class="line">		fn.call(array[index],index,array[index]);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">each([2,3,5],function()&#123;</div><div class="line">	console.log(this);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>####将伪数组转换成真数组</p>
+<p>#####利用slice( )</p>
+<blockquote>
+<p>语法：var realArr = Array.prototype.slice.call(fakeArr);<br>实现步骤：</p>
+<ol>
+<li>调用了Array.prototype.slice</li>
+<li>把里面的this改成了fakeArr</li>
+<li>没有给slice方法传递任何参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: 5</div><div class="line">&#125;;</div><div class="line">var realArr = Array.prototype.slice.call(fakeArr);</div><div class="line">console.log(realArr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p><strong>slice实现原理</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Array.prototype.slice = function(start,end)&#123;</div><div class="line">	var result = [];</div><div class="line">	start = start || 0;</div><div class="line">	end = end || this.length;</div><div class="line">	for(var i = start;i &lt; end;i++)&#123;</div><div class="line">		realArr.push(this[i]);</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><blockquote>
+<p>语法：函数名.apply(obj, 数组或者伪数组);<br>步骤：</p>
+<ol>
+<li>调用该函数</li>
+<li>将函数中的this指向obj</li>
+<li>将第二个参数中的数组或者伪数组中的元素，拆解开依次传递给函数作为实参<br>####将伪数组转换成真数组<br>#####for循环<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: 5</div><div class="line">&#125;;</div><div class="line">var realArr = [];</div><div class="line">for(var i = 0;i&lt;fakeArr.length;i++)&#123;</div><div class="line">	realArr.push(fakeArr[i]);</div><div class="line">&#125;</div><div class="line">console.log(realArr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>#####利用push( )</p>
+<blockquote>
+<p>语法：realArr.push.apply(realArr, fakeArr);<br>实现步骤：</p>
+<ol>
+<li>调用realArr.push</li>
+<li>将this指向realArr</li>
+<li>将fakeArr中的内容拆解开依次传递给realArr.push作为实参<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: 5</div><div class="line">&#125;;</div><div class="line">var realArr = [];</div><div class="line">realArr.push.apply(realArr,fakeArr);</div><div class="line">console.log(realArr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>#####利用concat( )</p>
+<blockquote>
+<p>语法：realArr.concat.apply(realArr, fakeArr);<br>实现步骤：</p>
+<ol>
+<li>调用realArr.push</li>
+<li>将this指向realArr</li>
+<li>将fakeArr中的内容拆解开依次传递给realArr.concat作为实参<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: 5</div><div class="line">&#125;;</div><div class="line">var realArr = [];</div><div class="line">realArr = realArr.concat.apply(realArr,fakeArr);</div><div class="line">console.log(realArr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>#####利用slice( )</p>
+<blockquote>
+<p>语法：var realArr = Array.prototype.slice.apply(fakeArr);<br>实现步骤：</p>
+<ol>
+<li>调用了Array.prototype.slice</li>
+<li>把里面的this改成了fakeArr</li>
+<li>没有给slice方法传递任何参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: 5</div><div class="line">&#125;;</div><div class="line">var realArr = Array.prototype.slice.apply(fakeArr);</div><div class="line">console.log(realArr);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>####求数组中所所有元素的最大值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Math.max.apply(Math, arr);</div></pre></td></tr></table></figure></p>
+<p>####求数组中所所有元素的和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function sum()&#123;</div><div class="line">	var result = 0;</div><div class="line">	for(var i = 0; i &lt; arguments.length; i ++)&#123;</div><div class="line">		result += arguments[i];</div><div class="line">	&#125;</div><div class="line">	return result;</div><div class="line">&#125;</div><div class="line">console.log(sum.apply(window, arr));</div></pre></td></tr></table></figure></p>
+<p>####使用上下文调用模式 实现 方法的借用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var monitor = &#123;</div><div class="line">	money: 0,</div><div class="line">	makeMoney: function()&#123;</div><div class="line">		this.money += 10000;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line">monitor.makeMoney();</div><div class="line">monitor.makeMoney();</div><div class="line">var monitorWife = &#123;</div><div class="line">	money: 0</div><div class="line">&#125;;</div><div class="line">monitor.makeMoney.call(monitorWife);</div></pre></td></tr></table></figure></p>
+<p>###给伪数组添加元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var fakeArr = &#123;</div><div class="line">	0: &quot;吴彦祖&quot;,</div><div class="line">	1: &quot;陈冠希&quot;,</div><div class="line">	2: &quot;金城武&quot;,</div><div class="line">	3: &quot;谢霆锋&quot;,</div><div class="line">	4: &quot;张震&quot;,</div><div class="line">	length: </div><div class="line">&#125;;</div><div class="line">Array.prototype.push.call(fakeArr, &quot;张柏芝&quot;);</div><div class="line">console.log(fakeArr);</div></pre></td></tr></table></figure></p>
+<h3 id="上下文调用模式的应用"><a href="#上下文调用模式的应用" class="headerlink" title="上下文调用模式的应用"></a>上下文调用模式的应用</h3><ol>
+<li>伪数组转数组</li>
+<li>数组求最大值</li>
+<li>借用方法</li>
+</ol>
+<h2 id="创建对象的两种模式"><a href="#创建对象的两种模式" class="headerlink" title="创建对象的两种模式"></a>创建对象的两种模式</h2><p>###1. 工厂模式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">	obj.name = <span class="string">""</span>;</div><div class="line">	obj.age = <span class="number">18</span>;</div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//this---&gt;window  因为调用模式是函数调用模式</span></div><div class="line"><span class="keyword">var</span> p = Person();</div></pre></td></tr></table></figure></p>
+<p>###2. 寄生模式<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">	obj.name = <span class="string">""</span>;</div><div class="line">	obj.age = <span class="number">18</span>;</div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//this---&gt;new创建出来的对象  因为调用模式是构造函数调用模式</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure></p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>###严格模式如何开启<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span></div><div class="line"><span class="meta">'use strict'</span></div></pre></td></tr></table></figure></p>
+<h3 id="严格模式的特征"><a href="#严格模式的特征" class="headerlink" title="严格模式的特征"></a>严格模式的特征</h3><ol>
+<li>声明变量必须使用var</li>
+<li>函数的形参不可以重名</li>
+<li>ES6之前 对象的属性名不可以重名</li>
+<li>eval函数有自己的作用域</li>
+<li>不允许使用8进制数字</li>
+</ol>
+<h2 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty"></a>Object.defineProperty</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//可以为对象添加属性，并且设置属性的特性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, propName, descriptor);</div><div class="line"><span class="comment">//descriptor对象的属性说明</span></div><div class="line">	<span class="comment">//writable： 设置属性是否可以被赋值，默认为false</span></div><div class="line">	<span class="comment">//configurable: 设置属性是否可以被删除，默认为false</span></div><div class="line">	<span class="comment">//enumerable: 设置属性是否可以被遍历，默认为false</span></div><div class="line">	<span class="comment">//value: 设置属性的值（默认值）</span></div><div class="line">	<span class="comment">//get set: 属性的设置器和获取器 两个方法，分别会在属性被赋值和取值的时候，被系统自动调用，不能和writable和value同时存在！</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/26/JavaScript高级 第5天/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/26/jquery笔记/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Mary" />
+          <p class="site-author-name" itemprop="name">Mary</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript高级-第6天"><span class="nav-number">1.</span> <span class="nav-text">JavaScript高级 第6天</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-立即执行函数表达式"><span class="nav-number">1.1.</span> <span class="nav-text">1. 立即执行函数表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传参的目的"><span class="nav-number">1.1.1.</span> <span class="nav-text">传参的目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#沙箱模式的用途"><span class="nav-number">1.1.2.</span> <span class="nav-text">沙箱模式的用途</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的方法"><span class="nav-number">1.2.</span> <span class="nav-text">数组的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的四种调用模式"><span class="nav-number">1.3.</span> <span class="nav-text">函数的四种调用模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上下文调用模式"><span class="nav-number">1.4.</span> <span class="nav-text">上下文调用模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-number">1.4.1.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">1.4.2.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上下文调用模式的应用"><span class="nav-number">1.4.3.</span> <span class="nav-text">上下文调用模式的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象的两种模式"><span class="nav-number">1.5.</span> <span class="nav-text">创建对象的两种模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#严格模式"><span class="nav-number">1.6.</span> <span class="nav-text">严格模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式的特征"><span class="nav-number">1.6.1.</span> <span class="nav-text">严格模式的特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">1.7.</span> <span class="nav-text">Object.defineProperty</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mary</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
