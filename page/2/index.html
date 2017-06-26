@@ -1,745 +1,184 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
+  
+  <title>page | 前端-花开两岸</title>
+  <meta name="author" content="Mary">
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
+  <meta property="og:site_name" content="前端-花开两岸"/>
+
   
-  
+    <meta property="og:image" content="undefined"/>
   
 
   
-    
-    
+    <link rel="alternative" href="/atom.xml" title="前端-花开两岸" type="application/atom+xml">
   
-
   
-
+    <link href="/favicon.png" rel="icon">
   
-
   
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">  
+  <link rel="stylesheet" href="/css/sidenav.css" media="screen" type="text/css">  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
   
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端-花开两岸">
-<meta property="og:url" content="https://mzwmary.github.io/page/2/index.html">
-<meta property="og:site_name" content="前端-花开两岸">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端-花开两岸">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://mzwmary.github.io/page/2/"/>
-
-
-
-
-
-  <title>前端-花开两岸</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">前端-花开两岸</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/06/25/string/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mary">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端-花开两岸">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/25/string/" itemprop="url">string</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-25T22:04:08+08:00">
-                2017-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#String()字符串方法</p>
-<p>##1、charAt()</p>
-<ul>
-<li>作用：根据下标找对应的字符</li>
-<li>语法：string.charAt(n);</li>
-<li>参数：n (可不写,默认为0)</li>
-<li>返回值：字符串string的第n个字符。<ul>
-<li>若n不在0~string.length-1范围内，返回  “”</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<p>##2、charCodeAt()</p>
-<ul>
-<li>作用：根据下标找对应的字符</li>
-<li>语法：string.charCodeAt(n);</li>
-<li>参数：n  (可不写,默认为0)</li>
-<li>返回值：返回字符串中第ｎ个字符串在Unicode中的编码<ul>
-<li>若n不在0~string.length-1范围内，返回NaN。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>##3、fromCharCode()</p>
-<ul>
-<li>作用：根据字符编码找对应字符</li>
-<li>语法：string.fromCharCode(n1,n2…)</li>
-<li>参数：n1、n2…（字符编码）</li>
-<li>返回值：含有指定编码的字符的新字符串</li>
-<li>注意点：fromcharCode()是构造函数 String()的属性，而不是字符串或String对象的方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var s = String.fromCharCode(104, 101, 108, 108, 111);</div><div class="line">console.log(s);//hello</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##4、indexOf()</p>
-<ul>
-<li>作用：根据字符找下标</li>
-<li>语法：string.indexOf(str，n)</li>
-<li>参数：str - 要在字符串string中检索的子串<ul>
-<li>n - 开始检索的位置<ul>
-<li>可不写，默认为0</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>##5、lastIndexOf()</p>
-<ul>
-<li>作用：根据字符找下标，从后往前找</li>
-<li>语法：string.lastIndexOf(str，n)</li>
-<li>参数：str - 要在字符串string中检索的子串<ul>
-<li>n - 开始检索的位置<ul>
-<li>可不写，默认为0</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>##6、toUpperCase()</p>
-<ul>
-<li>作用:将小写字母转成大写</li>
-<li>语法：string.toUpperCase()</li>
-<li>参数：无参数</li>
-<li>返回值：将所有小写字符都被转换成了大写字符 后的string</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = hello;</div><div class="line">var str1 = str.toUpperCase();</div><div class="line">console.log(str);</div><div class="line">console.log(str1);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##7、toLowerCase()</p>
-<ul>
-<li>作用:将大写字母转成小写</li>
-<li>语法：string.toLowerCase()</li>
-<li>参数：无参数</li>
-<li>返回值：将所有大写字符都被转换成了小写字符 后的string</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##8、slice()</p>
-<ul>
-<li>作用:用于截取字符串，返回新的截取后的字符串</li>
-<li>语法：string.slice(start,end)</li>
-<li>参数：start - 开始截取的下标<ul>
-<li>end - 结束截取的下标(不包含结束位置)</li>
-<li>如果是负数，从尾部位置开始算起</li>
-</ul>
-</li>
-<li>返回值：截取后新的字符串</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##9、substring()</p>
-<ul>
-<li>作用:用于截取字符串，返回新的截取后的字符串</li>
-<li>语法：string.subString(from,to)</li>
-<li>参数：from - 开始截取的位置<ul>
-<li>to - 结束截取的位置（不包含结束的位置）<ul>
-<li>to 可省略，默认到字符串结尾位置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：截取的新的字符串<ul>
-<li>若from = to 返回 “”</li>
-<li>若from &gt; to 先交换参数位置，但包含的还是from, 不包含to</li>
-</ul>
-</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>##10、split()</p>
-<ul>
-<li>作用:将字符串用分隔符转成数组</li>
-<li>语法：string.split(a,limit)</li>
-<li>参数：a - 字符串或正则表达式,从该参数指定的地方分割string<ul>
-<li>limit - 指定了返回的数组的最大长度(可不写)</li>
-</ul>
-</li>
-<li>返回值：一个字符串数组<ul>
-<li>若 a 在 string 开头位置，返回的数组的第一个元素是空字符串</li>
-<li>若 a 在 string 结尾位置，返回的数组的最后一个元素是空字符串</li>
-</ul>
-</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Mary" />
-          <p class="site-author-name" itemprop="name">Mary</p>
-           
-              <p class="site-description motion-element" itemprop="description"></p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Mary</span>
+<body id="body" data-spy="scroll" data-target=".toc">
+  <div class="container" id="container">
+	<div class="content">
+	  <div class="page-header">
+  <h1><a class="brand" href="#">前端-花开两岸</a></h1>
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+
+<div class="row page">
+	<div class="col-md-12">
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search notes..." class="st-search-input st-default-search-input form-control" style="margin-bottom:1em"/>
+        <div id="local-search-result"></div>
+		<div class="panel-group" id="notebook">
+			
+			
+			
+			
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<a class="panel-title" data-toggle="collapse" data-parent="#notebook" href="#Scratch">
+						<i class="fa fa-folder"></i> Scratch		   
+				</div>
+				
+					<div id="Scratch" class="panel-collapse collapse in">
+				
+					    <div class="panel-body">
+						    <ul class="post">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/25/string/">string</a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/1. HTML5/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/ajax笔记/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/HTML5/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/http服务&amp;ajax编程/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/Javascript高等第四天/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/JavaScript高级 第5天/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/JavaScript高级 第6天/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/jquery笔记/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/面向对象/"></a></li>
+			                    
+			    
+			                    
+			                    <li class="post-list-item"><a href="/2017/06/26/字符串方法/"></a></li>
+			                    
+			    
+				            </ul>
+				        </div>
+				    </div>
+			</div>
+			
+		</div><!-- accordion -->
+	</div>
 </div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
-
-        
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
+	</div>
   </div>
-
+  <div class="container-narrow">
+	<footer> <p>
+  &copy; 2017 Mary
   
+      with help from <a href="http://zespia.tw/hexo/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-wixo/">Wixo</a>.    
+</p> </footer>
+  </div> <!-- container-narrow -->
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
 
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.tableofcontents.min.js"></script>
+<script src="/js/tocgenerator.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 
 
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
