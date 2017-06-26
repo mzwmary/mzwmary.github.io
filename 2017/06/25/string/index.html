@@ -99,9 +99,9 @@
 <li>语法：string.fromCharCode(n1,n2…)</li>
 <li>参数：n1、n2…（字符编码）</li>
 <li>返回值：含有指定编码的字符的新字符串</li>
-<li>注意点：fromcharCode()是构造函数 String()的属性，而不是字符串或String对象的方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var s = String.fromCharCode(104, 101, 108, 108, 111);</div><div class="line">console.log(s);//hello</div></pre></td></tr></table></figure>
-</li>
+<li>注意点：fromcharCode()是构造函数 String()的属性，而不是字符串或String对象的方法。</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var s = String.fromCharCode(104, 101, 108, 108, 111);</div><div class="line">console.log(s);//hello</div></pre></td></tr></table></figure>
 <p>##4、indexOf()</p>
 <ul>
 <li>作用：根据字符找下标</li>
@@ -114,11 +114,11 @@
 </ul>
 </li>
 <li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>若没有，返回-1</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 <p>##5、lastIndexOf()</p>
 <ul>
 <li>作用：根据字符找下标，从后往前找</li>
@@ -131,29 +131,29 @@
 </ul>
 </li>
 <li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>若没有，返回-1</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 <p>##6、toUpperCase()</p>
 <ul>
 <li>作用:将小写字母转成大写</li>
 <li>语法：string.toUpperCase()</li>
 <li>参数：无参数</li>
 <li>返回值：将所有小写字符都被转换成了大写字符 后的string</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = hello;</div><div class="line">var str1 = str.toUpperCase();</div><div class="line">console.log(str);</div><div class="line">console.log(str1);</div></pre></td></tr></table></figure>
-</li>
+<li>原字符串：不变</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = hello;</div><div class="line">var str1 = str.toUpperCase();</div><div class="line">console.log(str);</div><div class="line">console.log(str1);</div></pre></td></tr></table></figure>
 <p>##7、toLowerCase()</p>
 <ul>
 <li>作用:将大写字母转成小写</li>
 <li>语法：string.toLowerCase()</li>
 <li>参数：无参数</li>
 <li>返回值：将所有大写字符都被转换成了小写字符 后的string</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>原字符串：不变</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 <p>##8、slice()</p>
 <ul>
 <li>作用:用于截取字符串，返回新的截取后的字符串</li>
@@ -164,9 +164,9 @@
 </ul>
 </li>
 <li>返回值：截取后新的字符串</li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>原字符串：不变</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 <p>##9、substring()</p>
 <ul>
 <li>作用:用于截取字符串，返回新的截取后的字符串</li>
@@ -183,9 +183,9 @@
 <li>若from &gt; to 先交换参数位置，但包含的还是from, 不包含to</li>
 </ul>
 </li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>原字符串：不变</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 <p>##10、split()</p>
 <ul>
 <li>作用:将字符串用分隔符转成数组</li>
@@ -199,9 +199,9 @@
 <li>若 a 在 string 结尾位置，返回的数组的最后一个元素是空字符串</li>
 </ul>
 </li>
-<li>原字符串：不变<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-</li>
+<li>原字符串：不变</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
 	  
 
 	  <div>
