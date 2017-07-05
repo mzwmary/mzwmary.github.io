@@ -561,12 +561,14 @@
 
       
         
-          
-            <h1 id="使用uploadify插件步骤："><a href="#使用uploadify插件步骤：" class="headerlink" title="使用uploadify插件步骤："></a>使用uploadify插件步骤：</h1><h2 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"uploadify/uploadify.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"uploadify/jquery.uploadify.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="调用uploadify提供的方法"><a href="#调用uploadify提供的方法" class="headerlink" title="调用uploadify提供的方法"></a>调用uploadify提供的方法</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">id</span>=<span class="string">"file"</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#file"</span>).uploadify(&#123;</div><div class="line">    <span class="comment">//指定swf文件的路径！！！ 推荐使用绝对路径</span></div><div class="line">    swf: <span class="string">"/views/assets/uploadify/uploadify.swf"</span>,</div><div class="line">    <span class="comment">//指定上传文件的接口地址</span></div><div class="line">    uploader: <span class="string">"/api/uploader/avatar"</span>,</div><div class="line">    <span class="comment">//指定上传文件的时候，文件的键， 后台需要通过该值来获取文件的内容</span></div><div class="line">    fileObjName: <span class="string">"tc_avatar"</span>,</div><div class="line">    <span class="comment">//尺寸</span></div><div class="line">    width: <span class="number">100</span>,</div><div class="line">    <span class="attr">height</span>: <span class="number">100</span>,</div><div class="line">    <span class="comment">//类样式，附加一个类样式给上传按钮</span></div><div class="line">    buttonClass: <span class="string">"类名"</span>,</div><div class="line">    <span class="comment">//按钮的文字</span></div><div class="line">    buttonText: <span class="string">"上传图片"</span>,</div><div class="line">    <span class="comment">//设置上传图片的大小限制，可以是一个字符串单位可以是B KB MB GB</span></div><div class="line">    fileSizeLimit: <span class="string">"100KB"</span>,</div><div class="line">    <span class="comment">//设置上传文件的类型，也就是在选择文件的窗口中筛选指定类型的文件</span></div><div class="line">    fileTypeExts: <span class="string">'*.gif; *.jpg; *.png'</span>,</div><div class="line">    <span class="comment">//formData  在上传文件的时候，可以附带一些数据，类似于ajax提交数据</span></div><div class="line">    formData: &#123;<span class="attr">key</span>: value&#125;,</div><div class="line">    <span class="comment">//设置上传进度的模板！</span></div><div class="line">    itemTemplate : <span class="string">'&lt;p&gt;&lt;/p&gt;'</span></div><div class="line">    <span class="comment">//onUploadSuccess 上传成功之后的回调函数</span></div><div class="line">    onUploadSuccess: <span class="function"><span class="keyword">function</span>(<span class="params">file, data, response</span>)</span>&#123;</div><div class="line">        </div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//onUploadComplete</span></div><div class="line">    <span class="comment">//onUploadError</span></div><div class="line">    <span class="comment">//onUploadProgress</span></div><div class="line">    <span class="comment">//onUploadStart</span></div><div class="line">    <span class="comment">//onUploadSuccess</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-
-          
+          <h1 id="使用uploadify插件步骤："><a href="#使用uploadify插件步骤：" class="headerlink" title="使用uploadify插件步骤："></a>使用uploadify插件步骤：</h1><h2 id="引包"><a href="#引包" class="headerlink" title="引包"></a>引包</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"uploadify/uploadify.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"uploadify/jquery.uploadify.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/05/uploadify/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1042,8 +1044,7 @@
 
       
         
-          
-            <h1 id="String-字符串方法"><a href="#String-字符串方法" class="headerlink" title="String()字符串方法"></a>String()字符串方法</h1><h2 id="1、charAt"><a href="#1、charAt" class="headerlink" title="1、charAt()"></a>1、charAt()</h2><ul>
+          <h1 id="String-字符串方法"><a href="#String-字符串方法" class="headerlink" title="String()字符串方法"></a>String()字符串方法</h1><h2 id="1、charAt"><a href="#1、charAt" class="headerlink" title="1、charAt()"></a>1、charAt()</h2><ul>
 <li>作用：根据下标找对应的字符</li>
 <li>语法：string.charAt(n);</li>
 <li>参数：n (可不写,默认为0)</li>
@@ -1103,69 +1104,13 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="6、toUpperCase"><a href="#6、toUpperCase" class="headerlink" title="6、toUpperCase()"></a>6、toUpperCase()</h2><ul>
-<li>作用:将小写字母转成大写</li>
-<li>语法：string.toUpperCase()</li>
-<li>参数：无参数</li>
-<li>返回值：将所有小写字符都被转换成了大写字符 后的string</li>
-<li>原字符串：不变</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = hello;</div><div class="line">var str1 = str.toUpperCase();</div><div class="line">console.log(str);</div><div class="line">console.log(str1);</div></pre></td></tr></table></figure>
-<h2 id="7、toLowerCase"><a href="#7、toLowerCase" class="headerlink" title="7、toLowerCase()"></a>7、toLowerCase()</h2><ul>
-<li>作用:将大写字母转成小写</li>
-<li>语法：string.toLowerCase()</li>
-<li>参数：无参数</li>
-<li>返回值：将所有大写字符都被转换成了小写字符 后的string</li>
-<li>原字符串：不变</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="8、slice"><a href="#8、slice" class="headerlink" title="8、slice()"></a>8、slice()</h2><ul>
-<li>作用:用于截取字符串，返回新的截取后的字符串</li>
-<li>语法：string.slice(start,end)</li>
-<li>参数：start - 开始截取的下标<ul>
-<li>end - 结束截取的下标(不包含结束位置)</li>
-<li>如果是负数，从尾部位置开始算起</li>
-</ul>
-</li>
-<li>返回值：截取后新的字符串</li>
-<li>原字符串：不变</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="9、substring"><a href="#9、substring" class="headerlink" title="9、substring()"></a>9、substring()</h2><ul>
-<li>作用:用于截取字符串，返回新的截取后的字符串</li>
-<li>语法：string.subString(from,to)</li>
-<li>参数：from - 开始截取的位置<ul>
-<li>to - 结束截取的位置（不包含结束的位置）<ul>
-<li>to 可省略，默认到字符串结尾位置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：截取的新的字符串<ul>
-<li>若from = to 返回 “”</li>
-<li>若from &gt; to 先交换参数位置，但包含的还是from, 不包含to</li>
-</ul>
-</li>
-<li>原字符串：不变</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="10、split"><a href="#10、split" class="headerlink" title="10、split()"></a>10、split()</h2><ul>
-<li>作用:将字符串用分隔符转成数组</li>
-<li>语法：string.split(a,limit)</li>
-<li>参数：a - 字符串或正则表达式,从该参数指定的地方分割string<ul>
-<li>limit - 指定了返回的数组的最大长度(可不写)</li>
-</ul>
-</li>
-<li>返回值：一个字符串数组<ul>
-<li>若 a 在 string 开头位置，返回的数组的第一个元素是空字符串</li>
-<li>若 a 在 string 结尾位置，返回的数组的最后一个元素是空字符串</li>
-</ul>
-</li>
-<li>原字符串：不变</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/25/string/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
