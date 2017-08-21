@@ -295,6 +295,352 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/07/05/nodejs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary-wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/nodejs/" itemprop="url">nodejs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T22:19:22+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">Nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/05/nodejs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/05/nodejs/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2017/07/05/nodejs/" class="leancloud_visitors" data-flag-title="nodejs">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数 </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h4><p>Node Package Manager<br>nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）。</p>
+<h5 id="利用-npm-安装插件：命令提示符执行npm-install-g-–save-dev"><a href="#利用-npm-安装插件：命令提示符执行npm-install-g-–save-dev" class="headerlink" title="利用 npm 安装插件：命令提示符执行npm  install  [-g] [–save-dev]"></a>利用 npm 安装插件：命令提示符执行npm  install <name> [-g] [–save-dev]</name></h5><ol>
+<li><code>&lt;name&gt;</code>：node插件名称。</li>
+<li><code>-g</code>：全局安装。将会安装在C:\Users\Administrator\AppData\Roaming\npm，并且写入系统环境变量；  非全局安装：将会安装在当前定位目录；  全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用。</li>
+<li><code>--save</code>：将保存配置信息至package.json（package.json是nodejs项目配置文件）。</li>
+<li><code>-dev</code>：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点。</li>
+</ol>
+<h5 id="使用-npm-卸载插件：npm-uninstall-g-–save-dev"><a href="#使用-npm-卸载插件：npm-uninstall-g-–save-dev" class="headerlink" title="使用 npm 卸载插件：npm uninstall  [-g] [–save-dev]"></a>使用 npm 卸载插件：npm uninstall <name> [-g] [–save-dev]</name></h5><p>不要直接删除本地插件包</p>
+<ol>
+<li>删除全部插件：npm uninstall gulp-less gulp-uglify gulp-concat ……???太麻烦</li>
+<li>借助rimraf：npm install rimraf -g 用法：rimraf node_modules</li>
+</ol>
+<h5 id="使用-npm-更新插件：npm-update-g-–save-dev"><a href="#使用-npm-更新插件：npm-update-g-–save-dev" class="headerlink" title="使用 npm 更新插件：npm update  [-g] [–save-dev]"></a>使用 npm 更新插件：npm update <name> [-g] [–save-dev]</name></h5><ol>
+<li>更新全部插件：npm update [–save-dev]</li>
+</ol>
+<h5 id="查看npm帮助：npm-help"><a href="#查看npm帮助：npm-help" class="headerlink" title="查看npm帮助：npm help"></a>查看npm帮助：npm help</h5><h5 id="当前目录已安装插件：npm-list"><a href="#当前目录已安装插件：npm-list" class="headerlink" title="当前目录已安装插件：npm  list"></a>当前目录已安装插件：npm  list</h5><h4 id="选装cnpm"><a href="#选装cnpm" class="headerlink" title="选装cnpm"></a>选装cnpm</h4><p>因为npm安装插件是从国外服务器下载，受网络影响大，可能出现异常，如果npm的服务器在中国就好了，所以我们乐于分享的淘宝团队干了这事。<br>网址：<a href="http://npm.taobao.org" target="_blank" rel="external">http://npm.taobao.org</a></p>
+<h5 id="安装：命令提示符执行npm-install-cnpm-g-–registry-https-registry-npm-taobao-org；"><a href="#安装：命令提示符执行npm-install-cnpm-g-–registry-https-registry-npm-taobao-org；" class="headerlink" title="安装：命令提示符执行npm  install cnpm -g –registry=https://registry.npm.taobao.org；"></a>安装：命令提示符执行npm  install cnpm -g –registry=<a href="https://registry.npm.taobao.org；" target="_blank" rel="external">https://registry.npm.taobao.org；</a></h5><p>注意：安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误；<br>注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/07/05/pulg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary-wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/pulg/" itemprop="url">pulg</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T21:15:44+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/05/pulg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/05/pulg/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2017/07/05/pulg/" class="leancloud_visitors" data-flag-title="pulg">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数 </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Gulp"><a href="#Gulp" class="headerlink" title="Gulp"></a>Gulp</h1><p>gulp是前端开发过程中对代码进行构建的工具。</p>
+<h2 id="Gulp-搭建步骤"><a href="#Gulp-搭建步骤" class="headerlink" title="Gulp 搭建步骤"></a>Gulp 搭建步骤</h2><h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><p>Node是一个服务器端的js运行环境，还是当做web服务器来使用</p>
+<p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript/coffee/sass/less/html/image/css 等文件的的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。</p>
+<h3 id="利用命令行"><a href="#利用命令行" class="headerlink" title="利用命令行"></a>利用命令行</h3><p><code>node -v</code> 查看安装的nodejs版本，出现版本号，说明刚刚已正确安装nodejs。<br><code>npm -v</code> 查看npm的版本号，npm是在安装nodejs时一同安装的nodejs包管理器。</p>
+<h4 id="全局安装gulp-cnpm-install-gulp-g"><a href="#全局安装gulp-cnpm-install-gulp-g" class="headerlink" title="全局安装gulp: cnpm install gulp -g"></a>全局安装gulp: cnpm install gulp -g</h4><p>查看是否正确安装：命令提示符执行gulp -v，出现版本号即为正确安装。</p>
+<h4 id="新建package-json文件-npm-init"><a href="#新建package-json文件-npm-init" class="headerlink" title="新建package.json文件 :npm init"></a>新建package.json文件 :<code>npm init</code></h4><p>在项目文件夹中创建一个package.json文件，这个文件中包含当前项目所需的所有的包的信息</p>
+<p>查看package.json帮助文档，<br>命令提示符执行<code>cnpm help package.json</code>。<br>特别注意：package.json是一个普通json文件，所以不能添加任何注释。</p>
+<h4 id="安装gulp插件"><a href="#安装gulp插件" class="headerlink" title="安装gulp插件"></a>安装gulp插件</h4><p><code>npm install 包名称@版本号 --save</code></p>
+<p>–save -S将当前的包信息保存到package.json<br>–savedev  -D</p>
+<p><code>npm install</code><br>会去将package.json中包含的所有的包进行下载安装！</p>
+<p><code>npm info 包</code><br>查看包的信息，包含版本信息</p>
+<p><code>npm search 包名</code><br>搜索相关的包！</p>
+<h4 id="新建gulpfile-js文件"><a href="#新建gulpfile-js文件" class="headerlink" title="新建gulpfile.js文件"></a>新建gulpfile.js文件</h4><h4 id="运行gulp-gulp-任务名称"><a href="#运行gulp-gulp-任务名称" class="headerlink" title="运行gulp : gulp 任务名称"></a>运行gulp : gulp 任务名称</h4><p>当执行gulp default或gulp将会调用default任务里的所有任务</p>
+<h3 id="browser-sync-的使用"><a href="#browser-sync-的使用" class="headerlink" title="browser-sync 的使用"></a>browser-sync 的使用</h3><h4 id="和gulp集成使用"><a href="#和gulp集成使用" class="headerlink" title="和gulp集成使用"></a>和gulp集成使用</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 为gulp安装browser-sync的包</span></div><div class="line">npm install browser-sync --save-dev</div><div class="line"></div><div class="line"><span class="comment">//2. 在gulpfile中应用模块</span></div><div class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">"browser-sync"</span>).create();</div><div class="line"></div><div class="line"><span class="comment">//3. 创建任务</span></div><div class="line">gulp.task(<span class="string">"browser"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//3.1 创建一个静态服务器</span></div><div class="line">    browserSync.init(&#123;</div><div class="line">        <span class="attr">server</span>: &#123;</div><div class="line">            <span class="comment">//设置网站的根目录</span></div><div class="line">            baseDir: <span class="string">"./"</span></div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//3.2 监视文件的变化，执行指定的任务并且刷新浏览器</span></div><div class="line">    gulp.watch(<span class="string">"要监视的文件"</span>, [<span class="string">"需要在文件改变后执行的任务"</span>]);</div><div class="line"></div><div class="line">    gulp.watch(<span class="string">"要监视的文件"</span>, browserSync.reload);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="单独使用browser-sync"><a href="#单独使用browser-sync" class="headerlink" title="单独使用browser-sync"></a>单独使用browser-sync</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 全局安装browser-sync</span></div><div class="line">npm install -g browser-sync</div><div class="line"></div><div class="line"><span class="comment">//2. 执行browsersync命令</span></div><div class="line">browser-sync start --server --files <span class="string">"*‘.js, *.html, *.less"</span></div></pre></td></tr></table></figure>
+<p>11、总结<br>11.1、安装nodejs；<br>11.2、新建package.json文件；<br>npm init -y<br>-y （默认）<br>11.3、全局和本地安装gulp；<br><code>npm install -g gulp-cli</code><br>11.4、安装gulp插件；<br>11.5、新建gulpfile.js文件；<br>11.6、通过命令提示符运行gulp任务。</p>
+<h2 id="gulp的使用步骤"><a href="#gulp的使用步骤" class="headerlink" title="gulp的使用步骤"></a>gulp的使用步骤</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 全局安装gulp命令</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//2. 在本地文件夹安装gulp相关的包</span></div><div class="line"><span class="comment">//安装之前先执行以下 这个命令生成一个package.json</span></div><div class="line"><span class="comment">//要不然会把文件安装到用户根目录</span></div><div class="line"></div><div class="line">npm install gulp --save-dev</div><div class="line">npm install gulp -D</div><div class="line"></div><div class="line"><span class="comment">//3. 创建一个gulpfile.js</span></div><div class="line"></div><div class="line"><span class="comment">//4. 在gulpfile.js中引入gulp包</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);</div><div class="line"></div><div class="line"><span class="comment">//5. 在gulpfile.js中创建新的任务</span></div><div class="line">gulp.task(<span class="string">"任务名称"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//任务内容</span></div><div class="line"></div><div class="line">    <span class="comment">//5.1 操作哪些文件，就是用gulp.src方法去读取文件</span></div><div class="line">    gulp.src(<span class="string">"./*.js"</span>)</div><div class="line">    <span class="comment">//5.2 通过gulp.pipe方法，将读取到的文件传递给下一个工作项(插件)</span></div><div class="line">    .pipe(uglify())</div><div class="line">    <span class="comment">//5.3 再通过pipe方法，将压缩好的内容传递给下一个工作项</span></div><div class="line">    <span class="comment">//gulp.dest 是用来将当前管道中的内容保存到指定的位置，如果这个位置不存在</span></div><div class="line">    <span class="comment">//他会自己创建的，文件名不需要指定，他会使用原来的文件名</span></div><div class="line">    .pipe(gulp.dest(<span class="string">"./dist"</span>))</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="gulp插件的使用过程"><a href="#gulp插件的使用过程" class="headerlink" title="gulp插件的使用过程"></a>gulp插件的使用过程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. 下载插件包</span></div><div class="line">npm install 插件包名称 -D</div><div class="line"></div><div class="line"><span class="comment">//2. 查看插件的文档  npmjs.com 搜索插件名称</span></div><div class="line"></div><div class="line"><span class="comment">//3. 引入插件包</span></div><div class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">"uglify"</span>);</div><div class="line"></div><div class="line"><span class="comment">//4.在管道中使用插件</span></div><div class="line">.pipe(uglify())</div></pre></td></tr></table></figure>
+<p>gulp-rev</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/07/05/ckeditor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -765,7 +1111,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/06/26/Markdown/">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2015/08/21/H5-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mary-wang">
@@ -784,7 +1130,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/26/Markdown/" itemprop="url">Markdown</a></h1>
+                <a class="post-title-link" href="/2015/08/21/H5-md/" itemprop="url">html5.md</a></h1>
         
 
         <div class="post-meta">
@@ -796,8 +1142,163 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T14:19:24+08:00">
-                2017-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-08-21T17:57:42+08:00">
+                2015-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/08/21/H5-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2015/08/21/H5-md/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2015/08/21/H5-md/" class="leancloud_visitors" data-flag-title="html5.md">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数 </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2015/01/26/Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary-wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/01/26/Markdown/" itemprop="url">Markdown</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-26T14:19:24+08:00">
+                2015-01-26
               </time>
             
 
@@ -837,9 +1338,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/26/Markdown/#comments" itemprop="discussionUrl">
+                <a href="/2015/01/26/Markdown/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/26/Markdown/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/01/26/Markdown/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -847,7 +1348,7 @@
 
           
           
-            <span id="/2017/06/26/Markdown/" class="leancloud_visitors" data-flag-title="Markdown">
+            <span id="/2015/01/26/Markdown/" class="leancloud_visitors" data-flag-title="Markdown">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -887,7 +1388,7 @@
 <p>在下面加<code>---</code>为h2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">h2</div><div class="line">-----</div></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/26/Markdown/#more" rel="contents">
+            <a class="btn" href="/2015/01/26/Markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -933,7 +1434,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/06/25/string/">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2015/01/25/string/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mary-wang">
@@ -952,7 +1453,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/25/string/" itemprop="url">string</a></h1>
+                <a class="post-title-link" href="/2015/01/25/string/" itemprop="url">string</a></h1>
         
 
         <div class="post-meta">
@@ -964,8 +1465,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-25T22:04:08+08:00">
-                2017-06-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-01-25T22:04:08+08:00">
+                2015-01-25
               </time>
             
 
@@ -1005,9 +1506,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/25/string/#comments" itemprop="discussionUrl">
+                <a href="/2015/01/25/string/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/25/string/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2015/01/25/string/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1015,7 +1516,7 @@
 
           
           
-            <span id="/2017/06/25/string/" class="leancloud_visitors" data-flag-title="string">
+            <span id="/2015/01/25/string/" class="leancloud_visitors" data-flag-title="string">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -1053,60 +1554,10 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="2、charCodeAt"><a href="#2、charCodeAt" class="headerlink" title="2、charCodeAt()"></a>2、charCodeAt()</h2><ul>
-<li>作用：根据下标找对应的字符</li>
-<li>语法：string.charCodeAt(n);</li>
-<li>参数：n  (可不写,默认为0)</li>
-<li>返回值：返回字符串中第ｎ个字符串在Unicode中的编码<ul>
-<li>若n不在0~string.length-1范围内，返回NaN。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="3、fromCharCode"><a href="#3、fromCharCode" class="headerlink" title="3、fromCharCode()"></a>3、fromCharCode()</h2><ul>
-<li>作用：根据字符编码找对应字符</li>
-<li>语法：string.fromCharCode(n1,n2…)</li>
-<li>参数：n1、n2…（字符编码）</li>
-<li>返回值：含有指定编码的字符的新字符串</li>
-<li>注意点：fromcharCode()是构造函数 String()的属性，而不是字符串或String对象的方法。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var s = String.fromCharCode(104, 101, 108, 108, 111);</div><div class="line">console.log(s);//hello</div></pre></td></tr></table></figure>
-<h2 id="4、indexOf"><a href="#4、indexOf" class="headerlink" title="4、indexOf()"></a>4、indexOf()</h2><ul>
-<li>作用：根据字符找下标</li>
-<li>语法：string.indexOf(str，n)</li>
-<li>参数：str - 要在字符串string中检索的子串<ul>
-<li>n - 开始检索的位置<ul>
-<li>可不写，默认为0</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
-<h2 id="5、lastIndexOf"><a href="#5、lastIndexOf" class="headerlink" title="5、lastIndexOf()"></a>5、lastIndexOf()</h2><ul>
-<li>作用：根据字符找下标，从后往前找</li>
-<li>语法：string.lastIndexOf(str，n)</li>
-<li>参数：str - 要在字符串string中检索的子串<ul>
-<li>n - 开始检索的位置<ul>
-<li>可不写，默认为0</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值：返回第一个出现str的第一个字符在string中的位置,要完整包含，否则返回-1<ul>
-<li>若没有，返回-1</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">举例：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">var str = &quot;hello&quot;;</div><div class="line">//无参数（默认为0）</div><div class="line">str.charAt();//h</div><div class="line">//在范围的参数</div><div class="line">str.charAt(1);//e</div><div class="line">//不在范围的参数</div><div class="line">str.charAt(100);//&quot;&quot;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/06/25/string/#more" rel="contents">
+            <a class="btn" href="/2015/01/25/string/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1188,7 +1639,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1199,7 +1650,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1210,7 +1661,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
