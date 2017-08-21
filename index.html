@@ -295,6 +295,189 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/08/21/HTML5-JS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mary-wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端-花开两岸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/21/HTML5-JS/" itemprop="url">HTML5-应用程序缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T21:40:34+08:00">
+                2017-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/21/HTML5-JS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/08/21/HTML5-JS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2017/08/21/HTML5-JS/" class="leancloud_visitors" data-flag-title="HTML5-应用程序缓存">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数 </span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="HTML5应用程序缓存（Application-Cache）"><a href="#HTML5应用程序缓存（Application-Cache）" class="headerlink" title="HTML5应用程序缓存（Application Cache）"></a>HTML5应用程序缓存（Application Cache）</h2><blockquote>
+<p>通过创建cache manifest文件，可以创建web应用缓存的离线版本。</p>
+<p>优点：</p>
+<ul>
+<li>离线浏览 - 用户可在应用离线时使用它们</li>
+<li>速度 - 已缓存资源加载得更快</li>
+<li>减少服务器负载 - 浏览器将只从服务器下载更新过或更改过的资源</li>
+<li>属性值 URL</li>
+</ul>
+</blockquote>
+<h3 id="第一步：cache-manifest-基础"><a href="#第一步：cache-manifest-基础" class="headerlink" title="第一步：cache manifest 基础"></a>第一步：cache manifest 基础</h3><p>在<html>标签中加入manifest属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE HTML&gt;</div><div class="line">&lt;html manifest=&quot;demo.appcache&quot;&gt;</div><div class="line">...</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></html></p>
+<p>每个指定了 manifest 的页面在用户对其访问时都会被缓存。如果未指定 manifest 属性，则页面不会被缓存（除非在 manifest 文件中直接指定了该页面）。<br>manifest 文件的建议的文件扩展名是：”.appcache”。<br>请注意，manifest 文件需要配置正确的 MIME-type，即 “text/cache-manifest”。必须在 web 服务器上进行配置</p>
+<h3 id="第二步：manifest文件配置"><a href="#第二步：manifest文件配置" class="headerlink" title="第二步：manifest文件配置"></a>第二步：manifest文件配置</h3><p>manifest 文件是简单的文本文件，它告知浏览器被缓存的内容（以及不缓存的内容）。<br>manifest 文件可分为三个部分：</p>
+<h4 id="CACHE-MANIFEST"><a href="#CACHE-MANIFEST" class="headerlink" title="CACHE MANIFEST"></a>CACHE MANIFEST</h4><p> 在此标题下列出的文件将在首次下载后进行缓存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CACHE MANIFEST</div><div class="line">/theme.css</div><div class="line">/logo.gif</div><div class="line">/main.js</div></pre></td></tr></table></figure>
+<p>当 manifest 文件加载后，浏览器会从网站的根目录下载CACHE MANIFEST 下面的文件。然后，无论用户何时与因特网断开连接，这些资源依然是可用的。</p>
+<h4 id="NETWORK"><a href="#NETWORK" class="headerlink" title="NETWORK"></a>NETWORK</h4><p>在此标题下列出的文件需要与服务器的连接，且不会被缓存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">login.php</div></pre></td></tr></table></figure></p>
+<p>可以使用星号来指示所有其他其他资源/文件都需要因特网连接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORK:</div><div class="line">*</div></pre></td></tr></table></figure></p>
+<h4 id="FALLBACK"><a href="#FALLBACK" class="headerlink" title="FALLBACK"></a>FALLBACK</h4><p>在此标题下列出的文件规定当页面无法访问时的回退页面（比如 404 页面）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">FALLBACK:</div><div class="line">/html/ /offline.html</div></pre></td></tr></table></figure></p>
+<h3 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h3><p>一旦应用被缓存，它就会保持缓存直到发生下列情况：</p>
+<ol>
+<li>用户清空浏览器缓存</li>
+<li>manifest 文件被修改（参阅下面的提示）</li>
+<li>由程序来更新应用缓存<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">CACHE MANIFEST</div><div class="line"># 2012-02-21 v1.0.0</div><div class="line">/theme.css</div><div class="line">/logo.gif</div><div class="line">/main.js</div><div class="line"></div><div class="line">NETWORK:</div><div class="line">login.php</div><div class="line"></div><div class="line">FALLBACK:</div><div class="line">/html/ /offline.html</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以 “#” 开头的是注释行，但也可满足其他用途。应用的缓存会在其 manifest 文件更改时被更新。如果您编辑了一幅图片，或者修改了一个 JavaScript 函数，这些改变都不会被重新缓存。更新注释行中的日期和版本号是一种使浏览器重新缓存文件的办法</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>一旦文件被缓存，则浏览器会继续展示已缓存的版本，即使您修改了服务器上的文件。为了确保浏览器更新缓存，您需要更新 manifest 文件。<br>浏览器对缓存数据的容量限制可能不太一样（某些浏览器设置的限制是每个站点 5MB）。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://mzwmary.github.io/2017/07/05/nodejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1130,7 +1313,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/08/21/html5/" itemprop="url">HTML5-DOM</a></h1>
+                <a class="post-title-link" href="/2015/08/21/html5/" itemprop="url">HTML5-HTML</a></h1>
         
 
         <div class="post-meta">
@@ -1193,7 +1376,7 @@
 
           
           
-            <span id="/2015/08/21/html5/" class="leancloud_visitors" data-flag-title="HTML5-DOM">
+            <span id="/2015/08/21/html5/" class="leancloud_visitors" data-flag-title="HTML5-HTML">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -2273,7 +2456,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
