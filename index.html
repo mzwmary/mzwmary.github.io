@@ -1229,7 +1229,8 @@
 <p>HTML5 简单易学</p>
 <h3 id="1-1-3-理解"><a href="#1-1-3-理解" class="headerlink" title="1.1.3. 理解"></a>1.1.3. 理解</h3><p>对比之前的html版本html到底有那些增强？<br>什么是html5？</p>
 <p>我们日常讨论的H5其实指的是一个范称，它是由HTML5 + CSS3 + Javascript等技术组合而成的一个应用开发平台。</p>
-<h2 id="1-2-html-提升"><a href="#1-2-html-提升" class="headerlink" title="1.2. html 提升"></a>1.2. html 提升</h2><h3 id="1-2-1-文档声明"><a href="#1-2-1-文档声明" class="headerlink" title="1.2.1. 文档声明"></a>1.2.1. 文档声明</h3><p><code>&lt;!doctype&gt;</code> 声明必须位于 HTML5 文档中的第一行,使用非常简单:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="1-2-html-提升"><a href="#1-2-html-提升" class="headerlink" title="1.2. html 提升"></a>1.2. html 提升</h2><h3 id="1-2-1-文档声明"><a href="#1-2-1-文档声明" class="headerlink" title="1.2.1. 文档声明"></a>1.2.1. 文档声明</h3><p><code>&lt;!doctype&gt;</code> 声明必须位于 HTML5 文档中的第一行,使用非常简单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div></pre></td></tr></table></figure>
 <h3 id="1-2-2-文档骨架"><a href="#1-2-2-文档骨架" class="headerlink" title="1.2.2. 文档骨架"></a>1.2.2. 文档骨架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;!-- en 英文 zh-cn 简体   zh-tw 繁体 --&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;文档标题&lt;/title&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">    文档内容......</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>注意：<br>申明文档语言<br>声明编码，中文否则会出现乱码。<br>特点： 结构简洁，语法宽松。<br>W3C验证地址 <a href="https://validator.w3.org/" target="_blank" rel="external">https://validator.w3.org/</a></p>
 <h3 id="1-2-3-标签"><a href="#1-2-3-标签" class="headerlink" title="1.2.3. 标签"></a>1.2.3. 标签</h3><h4 id="1-2-3-1-语义标签"><a href="#1-2-3-1-语义标签" class="headerlink" title="1.2.3.1. 语义标签"></a>1.2.3.1. 语义标签</h4><table>
@@ -1327,27 +1328,24 @@
 </tbody>
 </table>
 <h5 id="1-2-3-1-1-语义标签progress"><a href="#1-2-3-1-1-语义标签progress" class="headerlink" title="1.2.3.1.1.语义标签progress"></a>1.2.3.1.1.语义标签progress</h5><blockquote>
-<p><strong>progress(进度条)属性成员：</strong><br>max :  最大进度<br>value : 当前进度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt;&lt;/progress&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>progress(进度条)属性成员：</strong><br>max :  最大进度<br>value : 当前进度</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">&lt;progress max=&quot;100&quot; value=&quot;50&quot;&gt;&lt;/progress&gt;</div></pre></td></tr></table></figure>
 <p>效果图：<br><img src="./progress.png" alt="progress"></p>
 <h5 id="1-2-3-1-2-语义标签meter"><a href="#1-2-3-1-2-语义标签meter" class="headerlink" title="1.2.3.1.2.语义标签meter"></a>1.2.3.1.2.语义标签meter</h5><ul>
-<li><strong>meter：标签定义度量衡。仅用于已知最大和最小值的度量。</strong><blockquote>
+<li><strong>meter：标签定义度量衡。仅用于已知最大和最小值的度量。</strong></li>
+</ul>
+<blockquote>
 <p>属性：</p>
-<ul>
-<li>low：定义度量的值位于哪个点，被界定为低的值。</li>
-<li>high：定义度量的值位于哪个点，被界定为高的值。</li>
-<li>min ：定义最小值。默认值是 0。</li>
-<li>max：定义最大值。默认值是 1。</li>
-<li>value：定义度量的值。</li>
-<li>optimum：定义什么样的度量值是最佳的值。<ul>
-<li>如果该值高于 “high” 属性，则意味着值越高越好。</li>
-<li>如果该值低于 “low” 属性的值，则意味着值越低越好。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
+<pre><code>* low：定义度量的值位于哪个点，被界定为低的值。
+* high：定义度量的值位于哪个点，被界定为高的值。
+* min ：定义最小值。默认值是 0。
+* max：定义最大值。默认值是 1。
+* value：定义度量的值。
+* optimum：定义什么样的度量值是最佳的值。
+    * 如果该值高于 &quot;high&quot; 属性，则意味着值越高越好。
+    * 如果该值低于 &quot;low&quot; 属性的值，则意味着值越低越好。
+</code></pre></blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">&lt;meter value=&quot;40&quot; low=&quot;60&quot; high=&quot;80&quot; min=&quot;0&quot; max=&quot;100&quot;&gt;&lt;/meter&gt;</div><div class="line">&lt;meter value=&quot;70&quot; low=&quot;60&quot; high=&quot;80&quot; min=&quot;0&quot; max=&quot;100&quot;&gt;&lt;/meter&gt;</div><div class="line">&lt;meter value=&quot;90&quot; low=&quot;60&quot; high=&quot;80&quot; min=&quot;0&quot; max=&quot;100&quot;&gt;&lt;/meter&gt;</div></pre></td></tr></table></figure>
 <p>效果图：<br> <img src="./meter.png" alt="Alt text"></p>
 <h5 id="1-2-3-1-3-语义标签time"><a href="#1-2-3-1-3-语义标签time" class="headerlink" title="1.2.3.1.3.语义标签time"></a>1.2.3.1.3.语义标签time</h5><blockquote>
@@ -1360,10 +1358,12 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">&lt;mark&gt;mark标签的用法&lt;/mark&gt;</div></pre></td></tr></table></figure>
 <p>效果图：<br><img src="./mark.png" alt="mark"></p>
-<h4 id="1-2-3-2-网页传统版与HTML5版对比"><a href="#1-2-3-2-网页传统版与HTML5版对比" class="headerlink" title="1.2.3.2.网页传统版与HTML5版对比"></a>1.2.3.2.网页传统版与HTML5版对比</h4><p>经典网页布局传统版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;!-- 头部 --&gt;</div><div class="line">    &lt;div class=&quot;header&quot;&gt;</div><div class="line">        &lt;ul class=&quot;nav&quot;&gt;&lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;!-- 主体部分 --&gt;</div><div class="line">    &lt;div class=&quot;main&quot;&gt;</div><div class="line">        &lt;!-- 文章 --&gt;</div><div class="line">        &lt;div class=&quot;article&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;!-- 侧边栏 --&gt;</div><div class="line">        &lt;div class=&quot;aside&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;!-- 底部 --&gt;</div><div class="line">    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="1-2-3-2-网页传统版与HTML5版对比"><a href="#1-2-3-2-网页传统版与HTML5版对比" class="headerlink" title="1.2.3.2.网页传统版与HTML5版对比"></a>1.2.3.2.网页传统版与HTML5版对比</h4><p>经典网页布局传统版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;!-- 头部 --&gt;</div><div class="line">    &lt;div class=&quot;header&quot;&gt;</div><div class="line">        &lt;ul class=&quot;nav&quot;&gt;&lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;!-- 主体部分 --&gt;</div><div class="line">    &lt;div class=&quot;main&quot;&gt;</div><div class="line">        &lt;!-- 文章 --&gt;</div><div class="line">        &lt;div class=&quot;article&quot;&gt;&lt;/div&gt;</div><div class="line">        &lt;!-- 侧边栏 --&gt;</div><div class="line">        &lt;div class=&quot;aside&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;!-- 底部 --&gt;</div><div class="line">    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
 <p>经典网页布局HTML5版</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">    &lt;!-- 头部 --&gt;</div><div class="line">    &lt;header&gt;</div><div class="line">        &lt;nav class=&quot;nav&quot;&gt;&lt;/nav&gt;</div><div class="line">    &lt;/header&gt;</div><div class="line">    &lt;!-- 主体部分 --&gt;</div><div class="line">    &lt;main class=&quot;main&quot;&gt;</div><div class="line">        &lt;!-- 文章 --&gt;</div><div class="line">        &lt;article&gt;&lt;/article&gt;</div><div class="line">        &lt;!-- 侧边栏 --&gt;</div><div class="line">        &lt;aside&gt;&lt;/aside&gt;</div><div class="line">    &lt;/main&gt;</div><div class="line">    &lt;!-- 底部 --&gt;</div><div class="line">    &lt;footer&gt;&lt;/footer&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>本质上新语义标签与div、span没有区别，只是其具有表意性。<br>使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别。<br>可以理解成<code>&lt;div class=&quot;nav&quot;&gt;</code>相当于<code>&lt;nav&gt;</code>,<strong>不要好奇，它只是一个标签！</strong><br><strong>注意</strong>：尽量避免全局使用header、footer、aside等语义标签。</p>
+<p>本质上新语义标签与div、span没有区别，只是其具有表意性。<br>使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别。<br>可以理解成<code>&lt;div class=&quot;nav&quot;&gt;</code>相当于<code>&lt;nav&gt;</code>,<strong>不要好奇，它只是一个标签！</strong></p>
+<p><strong>注意</strong>：尽量避免全局使用header、footer、aside等语义标签。</p>
 <h4 id="1-2-3-3-兼容处理"><a href="#1-2-3-3-兼容处理" class="headerlink" title="1.2.3.3. 兼容处理"></a>1.2.3.3. 兼容处理</h4><p>越来越多的站点开始使用 HTML5 标签。但情况是还有很多人在使用IE6，IE7，IE8。</p>
 <p>在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，</p>
 <p>所以我们只需要将其转换成块元素(block)即可使用，</p>
@@ -1374,31 +1374,111 @@
 <p>在实际开发中我们更多采用的是通过检测IE浏览器的版本来加载第三方的一个JS库来解决兼容问题。</p>
 <h5 id="html5shiv"><a href="#html5shiv" class="headerlink" title="html5shiv"></a>html5shiv</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!--提前加载 支持IE低版本浏览器 IE 6 7 8 语义化标签的支持--&gt;</div><div class="line">&lt;!--条件注释  lt 小于 gt 大于  lte 小于等于  gte 大于等于--&gt;</div><div class="line"></div><div class="line">&lt;!--[if lt IE 9]&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
 <p>下载地址 <a href="http://www.bootcdn.cn/html5shiv/" target="_blank" rel="external">http://www.bootcdn.cn/html5shiv/</a></p>
-<h4 id="1-2-3-3-案例练习"><a href="#1-2-3-3-案例练习" class="headerlink" title="1.2.3.3. 案例练习"></a>1.2.3.3. 案例练习</h4><p>博客文章</p>
-<h3 id="1-2-4-表单"><a href="#1-2-4-表单" class="headerlink" title="1.2.4. 表单"></a>1.2.4. 表单</h3><h4 id="1-2-4-1-输入类型"><a href="#1-2-4-1-输入类型" class="headerlink" title="1.2.4.1. 输入类型"></a>1.2.4.1. 输入类型</h4><p>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。<br>本章全面介绍这些新的输入类型：<br>|类型|    说明|<br>| -|-|<br>|email  |在提交表单时，会自动验证 email 域的值是否合法有效|<br>|url    |定义输入URL字段,在提交表单时，会自动验证 url 域的值|<br>|tel    |定义输入电话号码字段|<br>|number |定义一个数值输入域(限定):<br>max- 规定允许的最大值<br>min -规定允许的最小值<br>step - 规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）<br>value - 规定默认值|<br>|search|    定义一个搜索字段 (类似站点搜索或者Google搜索)|<br>|range  |定义一个不需要非常精确的数值（类似于滑块控制）:|<br>|max- |规定允许的最大值|<br>|min - |规定允许的最小值|<br>|step - |规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）|<br>|value -| 规定默认值|<br>|color| 从拾色器中选择一个颜色|<br>|time   |定义可输入时间控制器|<br>|date|  定义一个时间控制器|<br>|week|  定义周和年|<br>|month| 定义月与年|<br>|datetime|  定义一个日期和时间控制器 兼容性差|<br>|datetime-local|    定义一个日期和时间|</p>
+<h3 id="1-2-4-表单"><a href="#1-2-4-表单" class="headerlink" title="1.2.4. 表单"></a>1.2.4. 表单</h3><h4 id="1-2-4-1-输入类型"><a href="#1-2-4-1-输入类型" class="headerlink" title="1.2.4.1. 输入类型"></a>1.2.4.1. 输入类型</h4><p>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。<br>本章全面介绍这些新的输入类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>在提交表单时，会自动验证 email 域的值是否合法有效</td>
+</tr>
+<tr>
+<td>url</td>
+<td>定义输入URL字段,在提交表单时，会自动验证 url 域的值</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>定义输入电话号码字段</td>
+</tr>
+<tr>
+<td>number</td>
+<td>定义一个数值输入域(限定):<br>max- 规定允许的最大值<br>min -规定允许的最小值<br>step - 规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）<br>value - 规定默认值</td>
+</tr>
+<tr>
+<td>search</td>
+<td>定义一个搜索字段 (类似站点搜索或者Google搜索)</td>
+</tr>
+<tr>
+<td>range</td>
+<td>定义一个不需要非常精确的数值（类似于滑块控制）:</td>
+</tr>
+<tr>
+<td>max-</td>
+<td>规定允许的最大值</td>
+</tr>
+<tr>
+<td>min -</td>
+<td>规定允许的最小值</td>
+</tr>
+<tr>
+<td>step -</td>
+<td>规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）</td>
+</tr>
+<tr>
+<td>value -</td>
+<td>规定默认值</td>
+</tr>
+<tr>
+<td>color</td>
+<td>从拾色器中选择一个颜色</td>
+</tr>
+<tr>
+<td>time</td>
+<td>定义可输入时间控制器</td>
+</tr>
+<tr>
+<td>date</td>
+<td>定义一个时间控制器</td>
+</tr>
+<tr>
+<td>week</td>
+<td>定义周和年</td>
+</tr>
+<tr>
+<td>month</td>
+<td>定义月与年</td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>定义一个日期和时间控制器 兼容性差</td>
+</tr>
+<tr>
+<td>datetime-local</td>
+<td>定义一个日期和时间</td>
+</tr>
+</tbody>
+</table>
 <p>注意:并不是所有的主流浏览器都支持新的input类型，不过您已经可以在所有主流的浏览器中使用它们了。即使不被支持，仍然可以显示为常规的文本域。 部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</p>
 <h5 id="1-2-4-1-1-HTML中的其他表单属性："><a href="#1-2-4-1-1-HTML中的其他表单属性：" class="headerlink" title="1.2.4.1.1.HTML中的其他表单属性："></a>1.2.4.1.1.HTML中的其他表单属性：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot;/&gt;</div><div class="line">&lt;input type=&quot;password&quot;/&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot;/&gt;</div><div class="line">&lt;input type=&quot;radio&quot;/&gt;</div><div class="line">&lt;input type=&quot;button&quot;/&gt;</div><div class="line">&lt;input type=&quot;submit&quot;/&gt;</div><div class="line">&lt;input type=&quot;reset&quot;/&gt;</div><div class="line">隐藏的表单元素</div><div class="line">&lt;input type=&quot;hidden&quot;/&gt;</div><div class="line">&lt;input type=&quot;file&quot;/&gt;</div><div class="line">&lt;input type=&quot;image&quot;/&gt;</div></pre></td></tr></table></figure>
-<p>效果图：</p>
 <h5 id="1-2-4-1-2虚拟键盘调用"><a href="#1-2-4-1-2虚拟键盘调用" class="headerlink" title="1.2.4.1.2虚拟键盘调用"></a>1.2.4.1.2虚拟键盘调用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; name=&quot;txt_text&quot; id=&quot;txt_text&quot;&gt;</div><div class="line">&lt;input type=&quot;number&quot; name=&quot;txt_number&quot; id=&quot;txt_number&quot;&gt;</div><div class="line">&lt;input type=&quot;email&quot; name=&quot;txt_email&quot; id=&quot;txt_email&quot;&gt;</div><div class="line">&lt;input type=&quot;tel&quot; name=&quot;txt_tel&quot; id=&quot;txt_tel&quot;&gt;</div><div class="line">&lt;input type=&quot;url&quot; name=&quot;txt_url&quot; id=&quot;txt_url&quot;&gt;</div><div class="line">&lt;input type=&quot;search&quot; name=&quot;txt_search&quot; id=&quot;txt_search&quot;&gt; 在移动端虚拟键盘会有搜索按钮</div></pre></td></tr></table></figure>
-<p><img src="./input_01.png" alt="Alt text"><br><img src="./input_02.png" alt="Alt text"><br><img src="./input_03.png" alt="Alt text"><br><img src="./input_04.png" alt="Alt text"><br><img src="./input_05.png" alt="Alt text"></p>
 <h4 id="1-2-4-2-表单标签"><a href="#1-2-4-2-表单标签" class="headerlink" title="1.2.4.2. 表单标签"></a>1.2.4.2. 表单标签</h4><h5 id="1-2-4-2-1-表单标签datalist"><a href="#1-2-4-2-1-表单标签datalist" class="headerlink" title="1.2.4.2.1. 表单标签datalist"></a>1.2.4.2.1. 表单标签datalist</h5><blockquote>
-<p>datalist 元素规定输入域的选项列表。<br>必须和input配合使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;input list=&quot;browsers&quot;&gt;</div><div class="line">&lt;datalist id=&quot;browsers&quot;&gt;</div><div class="line">    &lt;option value=&quot;Internet Explorer&quot;&gt;</div><div class="line">    &lt;option value=&quot;Firefox&quot;&gt;</div><div class="line">    &lt;option value=&quot;Chrome&quot;&gt;</div><div class="line">    &lt;option value=&quot;Opera&quot;&gt;</div><div class="line">    &lt;option value=&quot;Safari&quot;&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure></p>
+<p>datalist 元素规定输入域的选项列表。<br>必须和input配合使用</p>
 </blockquote>
-<p>效果图：<br><img src="./datalist.png" alt="Alt text"><br><strong><em>与select区别</em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;select&gt;</div><div class="line">    &lt;option value=&quot;Internet Explorer&quot;&gt;Internet Explorer&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Firefox&quot;&gt;Firefox&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Chrome&quot;&gt;Chrome&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Opera&quot;&gt;Opera&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Safari&quot;&gt;Safari&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="./select.png" alt="Alt text"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;input list=&quot;browsers&quot;&gt;</div><div class="line">&lt;datalist id=&quot;browsers&quot;&gt;</div><div class="line">    &lt;option value=&quot;Internet Explorer&quot;&gt;</div><div class="line">    &lt;option value=&quot;Firefox&quot;&gt;</div><div class="line">    &lt;option value=&quot;Chrome&quot;&gt;</div><div class="line">    &lt;option value=&quot;Opera&quot;&gt;</div><div class="line">    &lt;option value=&quot;Safari&quot;&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
+<p><strong><em>与select区别</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;select&gt;</div><div class="line">    &lt;option value=&quot;Internet Explorer&quot;&gt;Internet Explorer&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Firefox&quot;&gt;Firefox&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Chrome&quot;&gt;Chrome&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Opera&quot;&gt;Opera&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;Safari&quot;&gt;Safari&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure>
 <h5 id="1-2-4-2-2-表单标签keygen"><a href="#1-2-4-2-2-表单标签keygen" class="headerlink" title="1.2.4.2.2. 表单标签keygen"></a>1.2.4.2.2. 表单标签keygen</h5><blockquote>
-<p>keygen 生成加密字符串<br>当提交表单时，会生成两个键，一个是私钥，一个公钥。 私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;keygen.do&quot; method=&quot;get&quot;&gt;</div><div class="line">    用户名: &lt;input type=&quot;text&quot; name=&quot;usr_name&quot;&gt;</div><div class="line">    加密: &lt;keygen name=&quot;security&quot;&gt;</div><div class="line">    &lt;input type=&quot;submit&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p>keygen 生成加密字符串<br>当提交表单时，会生成两个键，一个是私钥，一个公钥。 私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;keygen.do&quot; method=&quot;get&quot;&gt;</div><div class="line">    用户名: &lt;input type=&quot;text&quot; name=&quot;usr_name&quot;&gt;</div><div class="line">    加密: &lt;keygen name=&quot;security&quot;&gt;</div><div class="line">    &lt;input type=&quot;submit&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <h5 id="1-2-4-2-3-表单标签output"><a href="#1-2-4-2-3-表单标签output" class="headerlink" title="1.2.4.2.3. 表单标签output"></a>1.2.4.2.3. 表单标签output</h5><blockquote>
-<p>output 元素用于不同类型的输出,不可当做数据提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;0</div><div class="line">    &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot;&gt;100 +</div><div class="line">    &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;&gt;=</div><div class="line">    &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p>output 元素用于不同类型的输出,不可当做数据提交</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;0</div><div class="line">    &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot;&gt;100 +</div><div class="line">    &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;&gt;=</div><div class="line">    &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <h4 id="1-2-4-3-表单属性"><a href="#1-2-4-3-表单属性" class="headerlink" title="1.2.4.3. 表单属性"></a>1.2.4.3. 表单属性</h4><ul>
-<li>form<ul>
+<li><p>form</p>
+<ul>
 <li>autocomplete 设置整个表单是否开启自动完成功能 on|off （默认on）</li>
 <li>novalidate 设置H5的表单校验是否工作 true 不工作 不加该属性代表校验</li>
 </ul>
 </li>
-<li>input: <ul>
+<li><p>input: </p>
+<ul>
 <li>autocomplete 单独设置每个文本框的自动完成</li>
 <li>autofocus 设置当前文本域页面加载完了过后自动得到焦点</li>
 <li>list 作用就是指定当前文本框的自动完成列表的数据 datalist 在界面上是看不见的，只是用于定义数据列表的</li>
@@ -1409,23 +1489,35 @@
 <li>form 属性是让表单外的表单元素也可以跟随表单一起提交</li>
 </ul>
 </li>
-<li>submit:<ul>
+<li><p>submit:</p>
+<ul>
 <li>form 在submit上重写表单的特定属性，当点击当前submit时会以当前值使用</li>
 </ul>
 </li>
-<li>formaction,</li>
-<li>formenctype,</li>
-<li>formmethod,</li>
-<li>formnovalidate,</li>
-<li>formtarget<h4 id="1-2-4-4-表单事件"><a href="#1-2-4-4-表单事件" class="headerlink" title="1.2.4.4. 表单事件"></a>1.2.4.4. 表单事件</h4></li>
-<li>oninput 用户输入内容时触发，可用于移动端输入字数统计</li>
-<li>oninvalid 验证不通过时触发，<ul>
-<li>setCustomValidity 设置自定义提示 (验证通过需要本身合法并且没有提示信息)<h4 id="1-2-4-5-案例练习"><a href="#1-2-4-5-案例练习" class="headerlink" title="1.2.4.5. 案例练习"></a>1.2.4.5. 案例练习</h4><a href="./exercise/student-information.html">学生档案</a><h3 id="1-2-5-多媒体"><a href="#1-2-5-多媒体" class="headerlink" title="1.2.5. 多媒体"></a>1.2.5. 多媒体</h3><h4 id="1-2-5-1-音频"><a href="#1-2-5-1-音频" class="headerlink" title="1.2.5.1. 音频"></a>1.2.5.1. 音频</h4></li>
-</ul>
+<li><p>formaction,</p>
 </li>
-<li>定义音频播放组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;audio src=&quot;要播放的音频文件&quot;&gt;&lt;/audio&gt;</div></pre></td></tr></table></figure>
+<li><p>formenctype,</p>
+</li>
+<li><p>formmethod,</p>
+</li>
+<li><p>formnovalidate,</p>
+</li>
+<li><p>formtarget</p>
 </li>
 </ul>
+<h4 id="1-2-4-4-表单事件"><a href="#1-2-4-4-表单事件" class="headerlink" title="1.2.4.4. 表单事件"></a>1.2.4.4. 表单事件</h4><ul>
+<li><p>oninput 用户输入内容时触发，可用于移动端输入字数统计</p>
+</li>
+<li><p>oninvalid 验证不通过时触发，</p>
+<ul>
+<li>setCustomValidity 设置自定义提示 (验证通过需要本身合法并且没有提示信息)</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-5-多媒体"><a href="#1-2-5-多媒体" class="headerlink" title="1.2.5. 多媒体"></a>1.2.5. 多媒体</h3><h4 id="1-2-5-1-音频"><a href="#1-2-5-1-音频" class="headerlink" title="1.2.5.1. 音频"></a>1.2.5.1. 音频</h4><ul>
+<li>定义音频播放组件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;audio src=&quot;要播放的音频文件&quot;&gt;&lt;/audio&gt;</div></pre></td></tr></table></figure>
 <h4 id="1-2-5-2-视频"><a href="#1-2-5-2-视频" class="headerlink" title="1.2.5.2. 视频"></a>1.2.5.2. 视频</h4><ul>
 <li>定义播放视频组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;video src=&quot;要播放的视频文件&quot;&gt;&lt;/video&gt;</div></pre></td></tr></table></figure>
 </li>
@@ -1443,9 +1535,38 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 分析第一个source格式是否支持，如果支持则加载该文件，不支持继续往下解析 --&gt;</div><div class="line">    &lt;source src=&quot;See You Again.mp3&quot;/&gt;</div><div class="line">    &lt;source src=&quot;See You Again.wav&quot;/&gt;</div><div class="line">    &lt;source src=&quot;See You Again.ogg&quot;/&gt;</div><div class="line">    &lt;p&gt;抱歉，您的浏览器不支持音频播放！&lt;/p&gt;</div><div class="line">&lt;!-- 分析第一个source格式是否支持，如果支持则加载该文件，不支持继续往下解析 --&gt;</div><div class="line">    &lt;source src=&quot;chrome.mp4&quot;&gt;</div><div class="line">    &lt;source src=&quot;chrome.ogv&quot;&gt;</div><div class="line">    &lt;source src=&quot;chrome.webm&quot;&gt;</div><div class="line">    &lt;p&gt;抱歉，您的浏览器不支持视频播放！&lt;/p&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>因此不管是audio还是video都不要直接设置标签的src</p>
-<h4 id="1-2-5-5-多媒体属性"><a href="#1-2-5-5-多媒体属性" class="headerlink" title="1.2.5.5. 多媒体属性"></a>1.2.5.5. 多媒体属性</h4><p>|属性 |含义|<br>|-|-|<br>|controls   |决定是否显示控制菜单|<br>|autoplay   |自动播放|<br>|loop|  循环播放|<br>|height/width   |定义播放器的宽高，只会在视频标签中生效|<br>|preload    |预加载 是否在页面加载完成并且没有开始播放时就开始加载文件，如果有自动播放属性则该属性无意义|</p>
 </li>
 </ul>
+<h4 id="1-2-5-5-多媒体属性"><a href="#1-2-5-5-多媒体属性" class="headerlink" title="1.2.5.5. 多媒体属性"></a>1.2.5.5. 多媒体属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controls</td>
+<td>决定是否显示控制菜单</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>height/width</td>
+<td>定义播放器的宽高，只会在视频标签中生效</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>预加载 是否在页面加载完成并且没有开始播放时就开始加载文件，如果有自动播放属性则该属性无意义</td>
+</tr>
+</tbody>
+</table>
 <h4 id="1-2-5-6-自定义控制栏"><a href="#1-2-5-6-自定义控制栏" class="headerlink" title="1.2.5.6. 自定义控制栏"></a>1.2.5.6. 自定义控制栏</h4><ol>
 <li>隐藏原生的控制菜单，也就是删除标签中的controls属性</li>
 <li>自己设计一套界面控制元素，比如播放按钮，音量控制开关之类</li>
@@ -1711,11 +1832,11 @@
 <h4 id="1-2-6-2-类名操作"><a href="#1-2-6-2-类名操作" class="headerlink" title="1.2.6.2. 类名操作"></a>1.2.6.2. 类名操作</h4><p>1、Node.classList.add(‘class’) 添加class<br>2、Node.classList.remove(‘class’) 移除class<br>3、Node.classList.toggle(‘class’) 切换class，有则移除，无则添加<br>4、Node.classList.contains(‘class’) 检测是否存在class<br>Node指一个有效的DOM节点，是一个通称。</p>
 <h4 id="1-2-6-3-自定义属性"><a href="#1-2-6-3-自定义属性" class="headerlink" title="1.2.6.3. 自定义属性"></a>1.2.6.3. 自定义属性</h4><p>1、 HTML5自定义属性：</p>
 <ul>
-<li><p>自定义属性格式：如下 <code>data-* = &quot;&quot;</code></p>
+<li>自定义属性格式：如下 <code>data-* = &quot;&quot;</code></li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">例如 :</div><div class="line">data-info=”我是自定义属性值”</div><div class="line">&lt;!--自定义属性的名称遵循：驼峰命名法--&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>自定义属性集合：<code>dateset</code></p>
 <ul>
+<li>自定义属性集合：<code>dateset</code><ul>
 <li>获取自定义属性集合：<ul>
 <li>获取所有自定义属性：<code>Node.dataset</code>  (结果以类数组形式存在)</li>
 <li>获取某一属性值：<code>Node.dataset.info</code></li>
@@ -1737,7 +1858,7 @@
 <p>3、HTML5中dataset 与 jquery中data( )方法区别：</p>
 <ul>
 <li>HTML5中dataset操作属性本身，直接改变属性的值，在行内能显示出来。</li>
-<li>jquery 中data( )操作dom对象的内存（与变量有点相似）在行内中不改变什么。<h4 id="1-2-6-4-案例练习"><a href="#1-2-6-4-案例练习" class="headerlink" title="1.2.6.4. 案例练习"></a>1.2.6.4. 案例练习</h4><img src="./exercise/tab.html" alt="Tab切换"></li>
+<li>jquery 中data( )操作dom对象的内存（与变量有点相似）在行内中不改变什么。</li>
 </ul>
 
           
